@@ -1,11 +1,9 @@
 package ru.gazprombank.educate.test.util.reflection;
 
-import ru.gazprombank.educate.test.util.ClassNotFoundTestException;
+import ru.gazprombank.educate.test.util.exception.ClassNotFoundTestException;
 
-import java.lang.reflect.Method;
-
-public final class ReflectionUtil {
-    private ReflectionUtil() {
+public final class ReflectionUtils {
+    private ReflectionUtils() {
         throw new UnsupportedOperationException();
     }
 
@@ -13,7 +11,7 @@ public final class ReflectionUtil {
         try {
             return Class.forName(classFullName);
         } catch (ClassNotFoundException e) {
-            throw new ClassNotFoundTestException(e);
+            throw new ClassNotFoundTestException(classFullName);
         }
     }
 }
