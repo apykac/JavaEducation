@@ -1,5 +1,7 @@
 package ru.gazprombank.educate.test.util.reflection;
 
+import ru.gazprombank.educate.test.util.exception.ClassNotFoundTestException;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -14,15 +16,27 @@ public final class ClassCash {
         CLASS_MAP.put(testClass.getName(), testClass);
     }
 
-    public synchronized static TestClass getClass(String className) {
-        return CLASS_MAP.get(className);
+    public synchronized static TestClass getClass(Class<?> clazz) {
+        if (clazz == null) {
+            throw new ClassNotFoundTestException("Class for found must be not null");
+        }
+        TestClass testClass = CLASS_MAP.get(clazz.getName());
+        if (testClass == null) {
+            testClass = new TestClass(clazz);
+            CLASS_MAP.put(testClass.getName(), testClass);
+        }
+        return testClass;
     }
 
-    public synchronized static TestClass getTestClass(Class<?> clazz) {
-        return CLASS_MAP.computeIfAbsent(clazz.getName(), TestClass::new);
-    }
-
-    public synchronized static TestClass getTestClass(String classFullName) {
-        return CLASS_MAP.computeIfAbsent(classFullName, TestClass::new);
+    public synchronized static TestClass getClass(String classFullName) {
+        if (classFullName == null || classFullName.isBlank()) {
+            throw new ClassNotFoundTestException("Class for found must be not null");
+        }
+        TestClass testClass = CLASS_MAP.get(classFullName);
+        if (testClass == null) {
+            testClass = new TestClass(classFullName);
+            CLASS_MAP.put(testClass.getName(), testClass);
+        }
+        return testClass;
     }
 }

@@ -7,7 +7,7 @@ import ru.gazprombank.educate.test.util.reflection.TestClass;
 import java.util.List;
 
 public class MethodNotFoundTestException extends RuntimeException {
-    private static final long serialVersionUID = 3591199269941558318L;
+    private static final long serialVersionUID = 7672855310529710723L;
 
     public MethodNotFoundTestException(String methodName,
                                        TestClass returnedTypeClass,
@@ -21,9 +21,12 @@ public class MethodNotFoundTestException extends RuntimeException {
                                        List<Modifier> modifiers,
                                        List<TestClass> parameterTypeClasses) {
         StringBuilder builder = new StringBuilder();
-        builder.append("method '").append(returnedTypeClass);
+        builder.append("method '");
         StringUtils.fillBuilderWithJoin(builder, modifiers, " ");
-        builder.append(' ').append(methodName).append('(');
+        if (modifiers != null && !modifiers.isEmpty()) {
+            builder.append(' ');
+        }
+        builder.append(returnedTypeClass).append(' ').append(methodName).append('(');
         StringUtils.fillBuilderWithJoin(builder, parameterTypeClasses, ", ");
         builder.append(")' not found");
         return builder.toString();

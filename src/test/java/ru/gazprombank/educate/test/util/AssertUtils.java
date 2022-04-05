@@ -22,7 +22,7 @@ public final class AssertUtils {
 
     public static TestClass getClass(String classFullName) {
         try {
-            return new TestClass(classFullName);
+            return ClassCash.getClass(classFullName);
         } catch (ClassNotFoundTestException e) {
             throw throwFail(e.getMessage());
         }
@@ -39,7 +39,7 @@ public final class AssertUtils {
             modifiers = modifiers == null ? Collections.emptyList() : modifiers;
             List<TestClass> parameterTypeClasses = (parameterTypes == null ? Collections.<String>emptyList() : parameterTypes)
                     .stream()
-                    .map(ClassCash::getTestClass)
+                    .map(ClassCash::getClass)
                     .collect(Collectors.toList());
             return clazz.getMethod(methodName, returnedTypeClass, modifiers, parameterTypeClasses);
         } catch (ClassNotFoundTestException | MethodNotFoundTestException e) {

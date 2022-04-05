@@ -18,7 +18,7 @@ public class TestField extends EqualsHashCodeClass<TestField> {
         this.owner = owner;
         this.field = field;
         name = this.field.getName();
-        type = ClassCash.getTestClass(this.field.getType());
+        type = ClassCash.getClass(this.field.getType());
         modifiers = Modifier.getModifiers(field);
     }
 
@@ -57,9 +57,8 @@ public class TestField extends EqualsHashCodeClass<TestField> {
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
-        builder.append("['");
         StringUtils.fillBuilderWithJoin(builder, modifiers, " ");
-        builder.append(' ').append(name).append("']");
+        builder.append(' ').append(name);
         return builder.toString();
     }
 }

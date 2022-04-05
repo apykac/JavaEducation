@@ -126,7 +126,10 @@ public class TestClass extends EqualsHashCodeClass<TestClass> {
     public String toString() {
         StringBuilder builder = new StringBuilder();
         StringUtils.fillBuilderWithJoin(builder, modifiers, " ");
-        builder.append(' ').append(name);
+        if (modifiers != null && !modifiers.isEmpty()) {
+            builder.append(' ');
+        }
+        builder.append(name);
         return builder.toString();
     }
 }

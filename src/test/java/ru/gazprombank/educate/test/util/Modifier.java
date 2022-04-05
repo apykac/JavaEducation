@@ -3,6 +3,7 @@ package ru.gazprombank.educate.test.util;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import java.util.Comparator;
 import java.util.List;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -28,6 +29,13 @@ public enum Modifier {
     Modifier(String name, Function<Integer, Boolean> checkModifier) {
         this.name = name;
         this.checkModifier = checkModifier;
+    }
+
+    public static List<Modifier> modifiersToList(Modifier... modifiers) {
+        return (modifiers == null ? Stream.<Modifier>empty() : Stream.of(modifiers))
+                .distinct()
+                .sorted(Comparator.comparingInt(Enum::ordinal))
+                .collect(Collectors.toList());
     }
 
     public boolean check(Class<?> clazz) {

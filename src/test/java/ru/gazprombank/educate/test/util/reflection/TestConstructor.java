@@ -20,7 +20,7 @@ public class TestConstructor extends EqualsHashCodeClass<TestConstructor> {
         this.constructor = constructor;
         this.modifiers = Modifier.getModifiers(constructor);
         this.parameters = Stream.of(this.constructor.getParameterTypes())
-                .map(ClassCash::getTestClass)
+                .map(ClassCash::getClass)
                 .collect(Collectors.toUnmodifiableList());
     }
 
@@ -45,11 +45,10 @@ public class TestConstructor extends EqualsHashCodeClass<TestConstructor> {
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
-        builder.append("['");
         StringUtils.fillBuilderWithJoin(builder, modifiers, " ");
         builder.append(" ").append(owner.getName()).append("(");
         StringUtils.fillBuilderWithJoin(builder, parameters, ", ");
-        builder.append(")']");
+        builder.append(')');
         return builder.toString();
     }
 }

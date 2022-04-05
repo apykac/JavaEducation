@@ -2,7 +2,9 @@ package ru.gazprombank.educate.test.util.reflection;
 
 import ru.gazprombank.educate.test.util.Modifier;
 import ru.gazprombank.educate.test.util.StringUtils;
+import ru.gazprombank.educate.test.util.exception.MethodInvokeTestException;
 
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.List;
 import java.util.Objects;
@@ -19,11 +21,28 @@ public class TestMethod extends EqualsHashCodeClass<TestMethod> {
     public TestMethod(Method method) {
         this.method = method;
         name = this.method.getName();
-        returnType = ClassCash.getTestClass(method.getReturnType());
+        returnType = ClassCash.getClass(method.getReturnType());
         parameters = Stream.of(method.getParameterTypes())
-                .map(ClassCash::getTestClass)
+                .map(ClassCash::getClass)
                 .collect(Collectors.toUnmodifiableList());
         modifiers = Modifier.getModifiers(method);
+    }
+
+    public <T> T invokeStaticMethod(Object... args) {
+        if (!modifiers.contains(Modifier.STATIC)) {
+            throw new MethodInvokeTestException("Try to call static method that not static: '" + this + "'");
+        } else {
+            return invokeMethod(null, args);
+        }
+    }
+
+    @SuppressWarnings("unchecked")
+    public <T> T invokeMethod(Object o, Object... args) {
+        try {
+            return (T) method.invoke(o, args);
+        } catch (InvocationTargetException | IllegalAccessException | ClassCastException e) {
+            throw new MethodInvokeTestException("Can't invoke method '" + this + "' cause: " + e.getMessage());
+        }
     }
 
     public String getName() {
@@ -63,26 +82,12 @@ public class TestMethod extends EqualsHashCodeClass<TestMethod> {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        TestMethod that = (TestMethod) o;
-        return Objects.equals(method, that.method) && Objects.equals(name, that.name) && Objects.equals(returnType, that.returnType) && Objects.equals(parameters, that.parameters) && Objects.equals(modifiers, that.modifiers);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(method, name, returnType, parameters, modifiers);
-    }
-
-    @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
-        builder.append("'[");
         StringUtils.fillBuilderWithJoin(builder, modifiers, " ");
-        builder.append(' ').append(name).append('(');
+        builder.append(' ').append(returnType).append(' ').append(name).append('(');
         StringUtils.fillBuilderWithJoin(builder, parameters, ", ");
-        builder.append(")']");
+        builder.append(')');
         return builder.toString();
     }
 }

@@ -9,7 +9,25 @@ public final class ReflectionUtils {
 
     public static Class<?> getClass(String classFullName) {
         try {
-            return Class.forName(classFullName);
+            if ("void".equals(classFullName)) {
+                return void.class;
+            } else if ("short".equals(classFullName)) {
+                return short.class;
+            } else if ("char".equals(classFullName)) {
+                return char.class;
+            } else if ("int".equals(classFullName)) {
+                return int.class;
+            } else if ("long".equals(classFullName)) {
+                return long.class;
+            } else if ("float".equals(classFullName)) {
+                return float.class;
+            } else if ("double".equals(classFullName)) {
+                return double.class;
+            } else if ("boolean".equals(classFullName)) {
+                return boolean.class;
+            } else {
+                return Class.forName(classFullName);
+            }
         } catch (ClassNotFoundException e) {
             throw new ClassNotFoundTestException(classFullName);
         }

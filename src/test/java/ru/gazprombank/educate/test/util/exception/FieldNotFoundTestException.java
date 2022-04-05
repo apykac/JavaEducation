@@ -7,7 +7,7 @@ import ru.gazprombank.educate.test.util.reflection.TestClass;
 import java.util.List;
 
 public class FieldNotFoundTestException extends RuntimeException {
-    private static final long serialVersionUID = 3591199269941558318L;
+    private static final long serialVersionUID = 466805795745947615L;
 
     public FieldNotFoundTestException(String fieldName,
                                       List<Modifier> modifiers,
@@ -21,9 +21,10 @@ public class FieldNotFoundTestException extends RuntimeException {
         StringBuilder builder = new StringBuilder();
         builder.append("field '");
         StringUtils.fillBuilderWithJoin(builder, modifiers, " ");
-        builder.append(' ').append(methodName).append('(');
-        StringUtils.fillBuilderWithJoin(builder, parameterTypeClasses, ", ");
-        builder.append(")' not found");
+        if (modifiers != null && !modifiers.isEmpty()) {
+            builder.append(' ');
+        }
+        builder.append(fieldType).append(' ').append(fieldName).append("' not found");
         return builder.toString();
     }
 }
