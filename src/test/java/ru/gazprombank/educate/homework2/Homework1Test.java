@@ -15,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.fail;
 
-public class Homework2Test {
+public class Homework1Test {
     private TestMethod calculateTriangleAreaMethod;
 
     @BeforeEach
