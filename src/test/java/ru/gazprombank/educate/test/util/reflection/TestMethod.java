@@ -41,7 +41,7 @@ public class TestMethod extends EqualsHashCodeClass<TestMethod> {
         try {
             return (T) method.invoke(o, args);
         } catch (InvocationTargetException | IllegalAccessException | ClassCastException e) {
-            throw new MethodInvokeTestException("Can't invoke method '" + this + "' cause: " + e.getMessage());
+            throw new MethodInvokeTestException("Can't invoke method '" + this + "' cause: " + e.getMessage(), e);
         }
     }
 

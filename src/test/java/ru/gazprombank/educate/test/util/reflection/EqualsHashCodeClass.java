@@ -53,7 +53,7 @@ public abstract class EqualsHashCodeClass<T> {
         if (this == o) {
             return true;
         }
-        if (o == null || getClass() != o.getClass() || !hashCode.equals(((EqualsHashCodeClass<?>) o).hashCode)) {
+        if (o == null || getClass() != o.getClass() || hashCode() != o.hashCode()) {
             return false;
         }
         return fieldEquals((T) this);
