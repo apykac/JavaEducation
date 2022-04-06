@@ -25,7 +25,7 @@ class HomeworkTest {
 
     @BeforeEach
     void setUp() {
-        TestClass testClass = AssertUtils.getClass("ru.gazprombank.educate.homework3.HomeWork");
+        TestClass testClass = AssertUtils.getClass("ru.gazprombank.educate.homework3.Homework");
         printMatrix = AssertUtils.getMethod(testClass,
                 "printMatrix",
                 void.class.getName(),
