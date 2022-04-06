@@ -1,4 +1,4 @@
-package ru.gazprombank.educate.homework7;
+package ru.gazprombank.educate.homework8;
 
 public class HomeWork {
 
