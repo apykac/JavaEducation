@@ -13,7 +13,7 @@ import ru.gazprombank.educate.test.util.reflection.TestMethod;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
-class Homework1Test {
+class HomeworkTest {
     private static final char[] ALLOWED_CHARACTERS;
 
     static {
