@@ -2,6 +2,7 @@ package ru.gazprombank.educate.test.util.reflection;
 
 import ru.gazprombank.educate.test.util.Modifier;
 import ru.gazprombank.educate.test.util.StringUtils;
+import ru.gazprombank.educate.test.util.exception.ClassNotFoundTestException;
 import ru.gazprombank.educate.test.util.exception.FieldNotFoundTestException;
 import ru.gazprombank.educate.test.util.exception.MethodNotFoundTestException;
 
@@ -25,7 +26,7 @@ public class TestClass extends EqualsHashCodeClass<TestClass> {
 
     public TestClass(Class<?> clazz) {
         this.clazz = clazz;
-        this.name = clazz.getName();
+        this.name = parseName();
         ClassCash.putClass(this);
         if (name.startsWith("ru.gazprombank.educate.")) {
             modifiers = Modifier.getModifiers(clazz);
@@ -44,6 +45,44 @@ public class TestClass extends EqualsHashCodeClass<TestClass> {
             fields = Collections.emptyList();
             methods = Collections.emptyList();
         }
+    }
+
+    private String parseName() {
+        String currentName = clazz.getName();
+        if (!currentName.startsWith("[")) {
+            return currentName;
+        }
+        int count = currentName.lastIndexOf('[') + 1;
+        if (count == currentName.length() - 1) {
+            switch (currentName.charAt(count)) {
+                case 'S':
+                    return "short" + getAllBrackets(count);
+                case 'C':
+                    return "char" + getAllBrackets(count);
+                case 'I':
+                    return "int" + getAllBrackets(count);
+                case 'J':
+                    return "long" + getAllBrackets(count);
+                case 'F':
+                    return "float" + getAllBrackets(count);
+                case 'D':
+                    return "double" + getAllBrackets(count);
+                case 'Z':
+                    return "boolean" + getAllBrackets(count);
+                default:
+                    throw new ClassNotFoundTestException(currentName);
+            }
+        } else {
+            return currentName.substring(count + 1, currentName.length() - 1) + getAllBrackets(count);
+        }
+    }
+
+    private String getAllBrackets(int count) {
+        StringBuilder builder = new StringBuilder();
+        for (int i = 0; i < count; i++) {
+            builder.append("[]");
+        }
+        return builder.toString();
     }
 
     public TestMethod getMethod(String methodName,
