@@ -25,12 +25,12 @@ class HomeworkTest {
 
     @BeforeEach
     void setUp() {
-        TestClass testClass = AssertUtils.getClass("ru.gazprombank.educate.homework3.HomeWork");
+        TestClass testClass = AssertUtils.getClass("ru.gazprombank.educate.homework3.Homework");
         printMatrix = AssertUtils.getMethod(testClass,
                 "printMatrix",
                 void.class.getName(),
                 Modifier.modifiersToList(Modifier.PUBLIC, Modifier.STATIC),
-                List.of(String[][].class.getName()));
+                List.of(int[][].class.getName()));
         PRINT_WRAPPER.off();
         PRINT_WRAPPER.clear();
         PRINT_WRAPPER.on();
@@ -57,7 +57,7 @@ class HomeworkTest {
     @DisplayName("1 2\n4 5\n7 8\n4 67\n33 111")
     @Test
     void test3() {
-        printMatrix.invokeStaticMethod(new Object[]{new int[][]{{1, 2}, {4, 5}, {4, 67}, {33, 111}}});
+        printMatrix.invokeStaticMethod(new Object[]{new int[][]{{1, 2}, {4, 5}, {7, 8}, {4, 67}, {33, 111}}});
         PRINT_WRAPPER.off();
         System.out.println(PRINT_WRAPPER.getOutString());
         Assertions.assertEquals(PRINT_WRAPPER.getOutString(), "1 2\n4 5\n7 8\n4 67\n33 111");
