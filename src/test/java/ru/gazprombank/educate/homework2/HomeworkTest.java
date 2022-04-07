@@ -56,7 +56,7 @@ class HomeworkTest {
             double area = calculateTriangleAreaMethod.invokeStaticMethod(8, 100, 7);
             fail("Must be exception thrown");
         } catch (MethodInvokeTestException e) {
-            assertSame(TriangleExistException.class, e.getCause().getClass());
+            assertSame(TriangleExistException.class, e.getCause().getCause().getClass());
         }
     }
 
@@ -67,7 +67,7 @@ class HomeworkTest {
             double area = calculateTriangleAreaMethod.invokeStaticMethod(8, -1, 7);
             fail("Must be exception thrown");
         } catch (MethodInvokeTestException e) {
-            assertSame(TriangleExistException.class, e.getCause().getClass());
+            assertSame(TriangleExistException.class, e.getCause().getCause().getClass());
         }
     }
 
@@ -78,7 +78,7 @@ class HomeworkTest {
             double area = calculateTriangleAreaMethod.invokeStaticMethod(8, 0, 7);
             fail("Must be exception thrown");
         } catch (MethodInvokeTestException e) {
-            assertSame(TriangleExistException.class, e.getCause().getClass());
+            assertSame(TriangleExistException.class, e.getCause().getCause().getClass());
         }
     }
 }
