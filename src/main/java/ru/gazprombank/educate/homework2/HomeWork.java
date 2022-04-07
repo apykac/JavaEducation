@@ -10,7 +10,7 @@ public class HomeWork {
 
         if ((a+b<c) | (a+c<b) | (b+c<a)) throw new TriangleExistException();
 
-        double p = (a+b+c)/2;
+        double p = (double) (a+b+c)/2;
         double s = Math.sqrt(p*(p-a)*(p-b)*(p-c));
         s=s*1000;
         int result = (int)Math.round(s);
