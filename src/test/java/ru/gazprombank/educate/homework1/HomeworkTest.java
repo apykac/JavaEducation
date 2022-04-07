@@ -34,7 +34,7 @@ class HomeworkTest {
 
     @BeforeEach
     void setUp() {
-        TestClass testClass = AssertUtils.getClass("ru.gazprombank.educate.homework1.HomeWork");
+        TestClass testClass = AssertUtils.getClass("ru.gazprombank.educate.homework1.Homework");
         punctuationCountMethod = AssertUtils.getMethod(testClass,
                 "punctuationCount",
                 int.class.getName(),

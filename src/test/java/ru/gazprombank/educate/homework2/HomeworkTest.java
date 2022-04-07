@@ -20,7 +20,7 @@ class HomeworkTest {
 
     @BeforeEach
     void setUp() {
-        TestClass testClass = AssertUtils.getClass("ru.gazprombank.educate.homework2.HomeWork");
+        TestClass testClass = AssertUtils.getClass("ru.gazprombank.educate.homework2.Homework");
         calculateTriangleAreaMethod = AssertUtils.getMethod(testClass,
                 "calculateTriangleArea",
                 double.class.getName(),
