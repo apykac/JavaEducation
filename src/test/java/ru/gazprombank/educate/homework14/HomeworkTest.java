@@ -12,7 +12,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class Homework14Test {
+public class HomeworkTest {
 
     private TestMethod calculatePartialSumMethod;
 
