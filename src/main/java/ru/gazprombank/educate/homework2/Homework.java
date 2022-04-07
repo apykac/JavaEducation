@@ -1,8 +1,6 @@
 package ru.gazprombank.educate.homework2;
 
-import java.text.DecimalFormat;
-
-public class HomeWork {
+public class Homework {
     public static void main(String[] args) {
     }
 
