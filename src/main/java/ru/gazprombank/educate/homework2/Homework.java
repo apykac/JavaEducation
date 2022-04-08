@@ -4,7 +4,7 @@ package ru.gazprombank.educate.homework2;
  * В классе создан статический публичный метод для приёма длин строн треугольника и вычисления его площади по сторонам
  * по формуле Герона. Метод возвращает площадь с округлением до трёх знаков
  */
-public class HomeWork {
+public class Homework {
 
     public static double semiPer(int a, int b, int c) {
         return (a + b + c) / 2;
