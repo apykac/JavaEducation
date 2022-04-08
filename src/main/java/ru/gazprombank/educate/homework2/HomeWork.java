@@ -10,13 +10,11 @@ public class HomeWork {
         return (a + b + c) / 2;
     }
 
-    public static double calculateTriangleArea(int a, int b, int c) {
+    public static double calcTriangle(int a, int b, int c) {
         return Math.sqrt(semiPer(a, b, c) * (semiPer(a, b, c) - a) * (semiPer(a, b, c) - b) * (semiPer(a, b, c) - c));
     }
 
-    public static void main(String[] args) throws TriangleExistException {
-        double resultCalculation;
-
+    public static double calculateTriangleArea(int a, int b, int c) throws TriangleExistException {
         TriangleArea triangleArea = new TriangleArea(8, 4, 7);
 
         if ((triangleArea.a + triangleArea.b <= triangleArea.c) ||
@@ -26,8 +24,14 @@ public class HomeWork {
             throw new TriangleExistException("triangle not exist");
         }
 
-        resultCalculation = calculateTriangleArea(triangleArea.a, triangleArea.b, triangleArea.c);
+        double resultCalculation = calcTriangle(triangleArea.a, triangleArea.b, triangleArea.c);
         System.out.printf("Площадь треугольника со сторонами " + triangleArea.a + ", " +
                 triangleArea.b + ", " + triangleArea.c + " равна " + "%.3f", resultCalculation);
+
+        return resultCalculation;
+    }
+
+    public static void main(String[] args) {
+
     }
 }
