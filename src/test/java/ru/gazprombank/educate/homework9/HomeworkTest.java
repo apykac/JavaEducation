@@ -59,7 +59,7 @@ public class HomeworkTest {
     @Test
     void test5() {
         boolean fine = calculateIsOrderedMethod.invokeStaticMethod(2, 4, 6, true);
-        assertTrue(fine, "Expected string: 'true' actual " + fine);
+        assertFalse(fine, "Expected string: 'true' actual " + fine);
     }
 
     @DisplayName("first: 7, second: 9, third: 10, itsOk: false; answer = true")
