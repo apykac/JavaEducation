@@ -2,7 +2,7 @@ package ru.gazprombank.educate.homework3;
 
 public class Homework {
     public static void main(String[] args) {
-        int[][] a = {{1, 2}, {4, 5}, {4, 67}, {33, 111}};
+        int[][] a = {{1, 2, 4, 2, 1, 3}, {2, 3, 4, 1, 3, 2,}, {1, 3, 4, 5, 6, 1}};
         printMatrix(a);
 
     }
@@ -14,8 +14,9 @@ public class Homework {
             if (i == a.length-1){
                 System.out.print(a[i][a[i].length-1]);
             } else{
-                System.out.print(a[i][a[i].length-1]+"\n");
+                System.out.println(a[i][a[i].length-1]);
             }
         }
     }
+
 }
