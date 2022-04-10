@@ -10,7 +10,6 @@ public class Homework {
     public static int punctuationCount(String a){
         int c = 0;
         char[] znakiprep = {'.',',',';',':','!','?','-','"','@','#','%','^','&','*','$','\'','[',']','+','/','<','>','(',')','_','`','{','}','~','=','|','\\' };
-        char[] str = a.toCharArray();
         for (int i = 0 ; i<=a.length()-1; i++){
             for (int j = 0 ; j <= znakiprep.length-1;j++){
                 if (a.charAt(i) == znakiprep[j]){
