@@ -19,7 +19,7 @@ public class HomeworkTest {
 
     @BeforeEach
     void setUp() {
-        TestClass testClass = AssertUtils.getClass("ru.gazprombank.educate.homework7.HomeWork");
+        TestClass testClass = AssertUtils.getClass("ru.gazprombank.educate.homework7.Homework");
         calculateTwoSumOneMethod = AssertUtils.getMethod(testClass,
                 "twoSumOne",
                 boolean.class.getName(),

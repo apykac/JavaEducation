@@ -18,7 +18,7 @@ public class HomeworkTest {
 
     @BeforeEach
     void setUp() {
-        TestClass testClass = AssertUtils.getClass("ru.gazprombank.educate.homework20.HomeWork");
+        TestClass testClass = AssertUtils.getClass("ru.gazprombank.educate.homework20.Homework");
         calculateYoYoMethod = AssertUtils.getMethod(testClass,
                 "yoYo",
                 int.class.getName(),

@@ -18,7 +18,7 @@ public class HomeworkTest {
 
     @BeforeEach
     void setUp() {
-        TestClass testClass = AssertUtils.getClass("ru.gazprombank.educate.homework18.HomeWork");
+        TestClass testClass = AssertUtils.getClass("ru.gazprombank.educate.homework18.Homework");
         calculateMatchingCharMethod = AssertUtils.getMethod(testClass,
                 "matchingChar",
                 int.class.getName(),

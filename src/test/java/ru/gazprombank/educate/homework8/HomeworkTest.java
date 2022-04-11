@@ -19,7 +19,7 @@ public class HomeworkTest {
 
     @BeforeEach
     void setUp() {
-        TestClass testClass = AssertUtils.getClass("ru.gazprombank.educate.homework8.HomeWork");
+        TestClass testClass = AssertUtils.getClass("ru.gazprombank.educate.homework8.Homework");
         calculateBirdsSingingMethod = AssertUtils.getMethod(testClass,
                 "birdsSinging",
                 boolean.class.getName(),
