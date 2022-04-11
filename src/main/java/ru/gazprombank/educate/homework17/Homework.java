@@ -1,6 +1,6 @@
 package ru.gazprombank.educate.homework17;
 
-public class HomeWork {
+public class Homework {
 
     public static void main(String[] args) {
         System.out.println(wordsCount(new String[]{"a", "bb", "b", "ccc"}, 1));

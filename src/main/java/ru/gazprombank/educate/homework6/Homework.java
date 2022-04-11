@@ -1,6 +1,6 @@
 package ru.gazprombank.educate.homework6;
 
-public class HomeWork {
+public class Homework {
 
     public static void main(String[] args) {
         System.out.println(speedingFine(65, true));

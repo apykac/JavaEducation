@@ -1,6 +1,6 @@
 package ru.gazprombank.educate.homework12;
 
-public class HomeWork {
+public class Homework {
 
     public static void main(String[] args) {
         System.out.println(sumUnique(3, 2, 3));

@@ -1,6 +1,6 @@
 package ru.gazprombank.educate.homework14;
 
-public class HomeWork {
+public class Homework {
 
     public static void main(String[] args) {
         System.out.println(partialSum(1, 13, 3));
