@@ -18,7 +18,7 @@ public class HomeworkTest {
 
     @BeforeEach
     void setUp() {
-        TestClass testClass = AssertUtils.getClass("ru.gazprombank.educate.homework14.HomeWork");
+        TestClass testClass = AssertUtils.getClass("ru.gazprombank.educate.homework14.Homework");
         calculatePartialSumMethod = AssertUtils.getMethod(testClass,
                 "partialSum",
                 int.class.getName(),
