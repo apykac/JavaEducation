@@ -14,9 +14,8 @@ public class Homework {
             if (i == a.length-1){
                 System.out.print(a[i][a[i].length-1]);
             } else{
-                System.out.println(a[i][a[i].length-1]);
+                System.out.print(a[i][a[i].length-1] + "\n");
             }
         }
     }
-
 }
