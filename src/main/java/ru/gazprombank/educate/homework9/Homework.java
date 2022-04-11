@@ -13,7 +13,7 @@ public class Homework {
                 result = true;
             }
         } else {
-            if (second <= first && third > second) {
+            if ((second <= first || second>first) && third > second) {
                 result = true;
             }
         }

@@ -16,8 +16,6 @@ public class Homework {
                 System.out.print(mass[i][mass[i].length-1]+"\n");
             }
         }
-
-
     }
     public static int[][] randomMatrix(int[][] a){
         Random rnd = new Random();
