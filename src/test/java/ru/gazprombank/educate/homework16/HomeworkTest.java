@@ -18,7 +18,7 @@ public class HomeworkTest {
 
     @BeforeEach
     void setUp() {
-        TestClass testClass = AssertUtils.getClass("ru.gazprombank.educate.homework16.HomeWork");
+        TestClass testClass = AssertUtils.getClass("ru.gazprombank.educate.homework16.Homework");
         calculateStarKillMethod = AssertUtils.getMethod(testClass,
                 "starKill",
                 String.class.getName(),

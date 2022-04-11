@@ -19,7 +19,7 @@ public class HomeworkTest {
 
     @BeforeEach
     void setUp() {
-        TestClass testClass = AssertUtils.getClass("ru.gazprombank.educate.homework9.HomeWork");
+        TestClass testClass = AssertUtils.getClass("ru.gazprombank.educate.homework9.Homework");
         calculateIsOrderedMethod = AssertUtils.getMethod(testClass,
                 "isOrdered",
                 boolean.class.getName(),
