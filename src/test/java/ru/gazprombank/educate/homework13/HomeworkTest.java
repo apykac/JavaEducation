@@ -18,7 +18,7 @@ public class HomeworkTest {
 
     @BeforeEach
     void setUp() {
-        TestClass testClass = AssertUtils.getClass("ru.gazprombank.educate.homework13.HomeWork");
+        TestClass testClass = AssertUtils.getClass("ru.gazprombank.educate.homework13.Homework");
         calculateNearestTwentyOneMethod = AssertUtils.getMethod(testClass,
                 "nearestTwentyOne",
                 int.class.getName(),

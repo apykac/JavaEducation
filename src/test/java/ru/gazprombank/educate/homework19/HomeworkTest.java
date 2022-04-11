@@ -18,7 +18,7 @@ public class HomeworkTest {
 
     @BeforeEach
     void setUp() {
-        TestClass testClass = AssertUtils.getClass("ru.gazprombank.educate.homework19.HomeWork");
+        TestClass testClass = AssertUtils.getClass("ru.gazprombank.educate.homework19.Homework");
         calculateLongestStreakMethod = AssertUtils.getMethod(testClass,
                 "longestStreak",
                 int.class.getName(),

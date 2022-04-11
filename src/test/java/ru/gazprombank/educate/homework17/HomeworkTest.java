@@ -18,7 +18,7 @@ public class HomeworkTest {
 
     @BeforeEach
     void setUp() {
-        TestClass testClass = AssertUtils.getClass("ru.gazprombank.educate.homework17.HomeWork");
+        TestClass testClass = AssertUtils.getClass("ru.gazprombank.educate.homework17.Homework");
         calculateWordsCountMethod = AssertUtils.getMethod(testClass,
                 "wordsCount",
                 int.class.getName(),

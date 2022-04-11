@@ -18,7 +18,7 @@ public class HomeworkTest {
 
     @BeforeEach
     void setUp() {
-        TestClass testClass = AssertUtils.getClass("ru.gazprombank.educate.homework6.HomeWork");
+        TestClass testClass = AssertUtils.getClass("ru.gazprombank.educate.homework6.Homework");
         calculateSpeedingFineMethod = AssertUtils.getMethod(testClass,
                 "speedingFine",
                 int.class.getName(),
