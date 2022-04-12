@@ -13,7 +13,7 @@ public class Homework {
                 System.out.print(twoDimArray[i][twoDimArray[i].length-1]);
             }
             else{
-                System.out.println(twoDimArray[i][twoDimArray[i].length-1]);
+                System.out.print(twoDimArray[i][twoDimArray[i].length-1] + "\n");
             }
         }
     }
