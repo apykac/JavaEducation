@@ -13,9 +13,6 @@ public class Homework {
         s=s*1000;
         int result = (int)Math.round(s);
         s = (double) result / 1000;
-/*        DecimalFormat decimalFormat = new DecimalFormat( "#.###" );
-        String result = decimalFormat.format(s);
-        s = Double.parseDouble(result);*/
         return s;
 
     }
