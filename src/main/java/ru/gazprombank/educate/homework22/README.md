@@ -6,7 +6,7 @@
 
 Пример
 ```
-endoo("oore")    - вернет reoo
-endoo("oohoi")   - вернет hiooo
-endoo("oanotgo") - вернет antgooo
+endoo("hello") - вернет hel-lo
+endoo("xxyy")  - вернет x-xy-y
+endoo("aaaa")  - вернет a-a-a-a
 ```
