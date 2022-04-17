@@ -18,7 +18,7 @@ public class HomeworkTest {
 
     @BeforeEach
     void setUp() {
-        TestClass testClass = AssertUtils.getClass("ru.gazprombank.educate.homework5.HomeWork");
+        TestClass testClass = AssertUtils.getClass("ru.gazprombank.educate.homework5.Homework");
         calculateMiddleThreeMethod = AssertUtils.getMethod(testClass,
                 "middleThree",
                 String.class.getName(),

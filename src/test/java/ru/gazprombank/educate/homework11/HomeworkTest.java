@@ -18,7 +18,7 @@ public class HomeworkTest {
 
     @BeforeEach
     void setUp() {
-        TestClass testClass = AssertUtils.getClass("ru.gazprombank.educate.homework11.HomeWork");
+        TestClass testClass = AssertUtils.getClass("ru.gazprombank.educate.homework11.Homework");
         calculateFizzyWizzyMethod = AssertUtils.getMethod(testClass,
                 "fizzyWizzy",
                 String.class.getName(),

@@ -1,16 +1,16 @@
 package ru.gazprombank.educate.homework5;
 
-public class HomeWork {
+public class Homework {
 
     public static void main(String[] args) {
 
     }
 
-    public static String middleThree(String str){
+   public static String middleThree(String str){
         String result = "";
-        int i = str.length()/2;
+        int i = (str.length()-3)/2;
         if (str.length()<4) result = str;
-        else result = str.substring(i-1) + str.substring(i) + str.substring(i+1);
+        else result = str.substring(i, str.length()-i);
         return result;
     }
 }

@@ -18,7 +18,7 @@ public class HomeworkTest {
 
     @BeforeEach
     void setUp() {
-        TestClass testClass = AssertUtils.getClass("ru.gazprombank.educate.homework12.HomeWork");
+        TestClass testClass = AssertUtils.getClass("ru.gazprombank.educate.homework12.Homework");
         calculateSumUniqueMethod = AssertUtils.getMethod(testClass,
                 "sumUnique",
                 int.class.getName(),
