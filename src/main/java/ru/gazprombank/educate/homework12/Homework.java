@@ -8,19 +8,15 @@ public class Homework {
 
     public static int sumUnique (int a, int b, int c) {
         int sum = a + b + c;
-        if ((a == b) & (a == c)) {
+        if ((a == b) & (a == c))
             sum = 0;
-        }
         else {
-            if (a == b) {
+            if (a == b)
                 sum = c;
-            }
-            if (a == c) {
+            if (a == c)
                 sum = b;
-            }
-            if (b == c) {
+            if (b == c)
                 sum = a;
-            }
         }
         return sum;
     }

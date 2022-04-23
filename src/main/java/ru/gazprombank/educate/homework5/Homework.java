@@ -7,9 +7,7 @@ public class Homework {
     }
     public static String middleThree (String s) {
         int len = s.length();
-        if (len < 3) {
-            return s;
-        }
+        if (len < 3) return s;
         int start = len/2;
         char [] ch = new char[3];
         s.getChars(start-1, start+2, ch, 0);

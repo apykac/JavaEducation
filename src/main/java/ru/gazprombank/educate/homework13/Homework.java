@@ -10,9 +10,8 @@ public class Homework {
         int near = 0;
         boolean trA = false;
         boolean trB = false;
-        if ((a > 21) & (b > 21)) {
+        if ((a > 21) & (b > 21))
             near = 0;
-        }
         else {
             if (a > 21) {
                 near = b;
@@ -25,13 +24,11 @@ public class Homework {
             int a1 = 21 - a;
             int b1 = 21 - b;
             if (a1 < b1) {
-                if ((trA == false) & (trB == false)) {
+                if ((trA == false) & (trB == false))
                     near = a;
-                }
             }
-            else if ((trA == false) & (trB == false)) {
+            else if ((trA == false) & (trB == false))
                 near = b;
-            }
         }
         return near;
     }

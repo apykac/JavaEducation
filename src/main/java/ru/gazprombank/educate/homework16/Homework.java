@@ -13,18 +13,16 @@ public class Homework {
             if (str.charAt(i) == '*')  {
                 if (more == false) {
                     more = true;
-                    if (newStr.length() > 1) {
+                    if (newStr.length() > 1)
                         newStr = newStr.substring(0, newStr.length() - 1);
-                    } else {
+                    else
                         newStr = "";
-                    }
                 }
             } else {
-                if (more == false) {
+                if (more == false)
                     newStr = newStr + str.charAt(i);
-                } else {
+                else
                     more = false;
-                }
             }
         }
         return newStr;
