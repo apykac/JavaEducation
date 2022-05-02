@@ -1,6 +1,6 @@
 package ru.gazprombank.educate.homework7;
 
-public class HomeWork {
+public class Homework {
 
     public static void main(String[] args) {
         System.out.println(twoSumOne(3,2,1));

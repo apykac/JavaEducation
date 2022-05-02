@@ -1,6 +1,6 @@
 package ru.gazprombank.educate.homework9;
 
-public class HomeWork {
+public class Homework {
 
     public static void main(String[] args) {
         System.out.println(isOrdered(1,2,3,true));

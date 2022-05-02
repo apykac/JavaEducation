@@ -18,7 +18,7 @@ public class HomeworkTest {
 
     @BeforeEach
     void setUp() {
-        TestClass testClass = AssertUtils.getClass("ru.gazprombank.educate.homework15.HomeWork");
+        TestClass testClass = AssertUtils.getClass("ru.gazprombank.educate.homework15.Homework");
         calculateRepeatCharMethod = AssertUtils.getMethod(testClass,
                 "repeatChar",
                 String.class.getName(),

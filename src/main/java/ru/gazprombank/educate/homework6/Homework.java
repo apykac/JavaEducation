@@ -1,6 +1,6 @@
 package ru.gazprombank.educate.homework6;
 
-public class HomeWork {
+public class Homework {
 
     public static void main(String[] args) {
         int speed = 86;
