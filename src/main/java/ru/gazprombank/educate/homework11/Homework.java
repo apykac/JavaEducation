@@ -5,8 +5,9 @@ public class Homework {
     public static void main(String[] args) {
         System.out.println(fizzyWizzy(15));
     }
-    public static String fizzyWizzy (int n) {
-        String text ="";
+
+    public static String fizzyWizzy(int n) {
+        String text = "";
         int module3 = n % 3;
         int module5 = n % 5;
         if (module3 == 0)

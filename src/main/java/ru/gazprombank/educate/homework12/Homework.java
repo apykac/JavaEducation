@@ -3,9 +3,10 @@ package ru.gazprombank.educate.homework12;
 public class Homework {
 
     public static void main(String[] args) {
-        System.out.println(sumUnique(1,2,3));
+        System.out.println(sumUnique(1, 2, 3));
     }
-    public static int sumUnique (int a, int b, int c) {
+
+    public static int sumUnique(int a, int b, int c) {
         int sum = a + b + c;
         if ((a == b) && (a == c))
             sum = 0;

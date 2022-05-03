@@ -3,7 +3,7 @@ package ru.gazprombank.educate.homework8;
 public class Homework {
 
     public static void main(String[] args) {
-        System.out.println(birdsSinging(80,true));
+        System.out.println(birdsSinging(80, true));
     }
 
     public static boolean birdsSinging (int temp, boolean isSummer)

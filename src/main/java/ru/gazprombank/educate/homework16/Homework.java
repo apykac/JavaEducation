@@ -5,11 +5,12 @@ public class Homework {
     public static void main(String[] args) {
         System.out.println(starKill("HEL*LO"));
     }
-    public static String starKill (String str) {
+
+    public static String starKill(String str) {
         String text = "";
         boolean star = false;
         for (int i = 0; i < str.length(); i++) {
-            if (str.charAt(i) == '*')  {
+            if (str.charAt(i) == '*') {
                 if (!star) {
                     star = true;
                     if (text.length() > 1)

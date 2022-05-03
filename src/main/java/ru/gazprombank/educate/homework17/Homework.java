@@ -5,11 +5,12 @@ public class Homework {
     public static void main(String[] args) {
         System.out.println(wordsCount(new String[]{"a", "ccc"}, 3));
     }
-    public static int wordsCount(String[] words, int len){
+
+    public static int wordsCount(String[] words, int len) {
         int count = 0;
-        for (int i = 0; i<words.length; i++){
-            if (words[i].length() == len){
-                count ++;
+        for (int i = 0; i < words.length; i++) {
+            if (words[i].length() == len) {
+                count++;
             }
         }
         return count;

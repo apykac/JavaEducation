@@ -7,7 +7,8 @@ public class Homework {
         boolean isHoliday = true;
         System.out.println(speedingFine(speed, isHoliday));
     }
-    public static int speedingFine(int speed, boolean isHoliday){
+
+    public static int speedingFine(int speed, boolean isHoliday) {
         int speed60 = 60;
         int speed80 = 80;
 
@@ -16,10 +17,10 @@ public class Homework {
             speed80 = speed80 + 5;
         }
 
-        if( speed <= speed60){
+        if (speed <= speed60) {
             return 0;
         } else {
-            if (speed <= speed80 ){
+            if (speed <= speed80) {
                 return 100;
             } else {
                 return 200;
@@ -30,5 +31,5 @@ public class Homework {
     }
 
 
-    }
+}
 
