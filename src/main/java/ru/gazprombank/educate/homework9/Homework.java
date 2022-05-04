@@ -9,14 +9,13 @@ public class Homework {
 
     public static boolean isOrdered(int first, int second, int third, boolean itsOk) {
 
-        if (second > first && third > second) {
+        if (!itsOk && second > first && third > second) {
             return true;
         }
-        if (itsOk) {
-            boolean b = second <= first;
+        if (itsOk && second < third) {
             return true;
         } else {
             return false;
-                    }
+        }
     }
 }
