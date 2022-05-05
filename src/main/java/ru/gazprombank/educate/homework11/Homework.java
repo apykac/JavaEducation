@@ -14,6 +14,7 @@ public class Homework {
             s = "Fizz!";
         if (mod5 == 0)
             s = "Buzz!";
+        // Одинарные операторы сравнения
         if ((mod3 == 0) & (mod5 == 0))
             s = "FizzBuzz!";
         if ((mod3 != 0) & (mod5 != 0))

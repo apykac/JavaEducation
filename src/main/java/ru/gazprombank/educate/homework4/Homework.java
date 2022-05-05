@@ -7,6 +7,8 @@ public class Homework {
     public static void main(String[] args) {
 
     }
+
+    // Тесты не проходят
     public static int [][] randomMatrix (int [][] matrix){
         Random rnd = new Random();
         for (int i = 0; i < matrix.length; i++)

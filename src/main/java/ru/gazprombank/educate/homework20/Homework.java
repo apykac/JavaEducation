@@ -11,6 +11,7 @@ public class Homework {
 
     public static int yoYo (String str) {
         int countN = 0;
+        // Метод indexOf возвращает результат вхождения подстроки в строку. Для того чтобы просто определить есть ли подстрока в строке, есть метод contains
         if ((str.length() <= 1) || str.indexOf("yo") == -1) {
             countN = count;
             count = 0;

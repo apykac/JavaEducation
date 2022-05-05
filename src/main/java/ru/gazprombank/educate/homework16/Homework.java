@@ -11,6 +11,7 @@ public class Homework {
         boolean more = false;
         for (int i = 0; i < str.length(); i++) {
             if (str.charAt(i) == '*')  {
+                // Булева переменная сравнивается другим способом
                 if (more == false) {
                     more = true;
                     if (newStr.length() > 1)
@@ -19,7 +20,9 @@ public class Homework {
                         newStr = "";
                 }
             } else {
+                // Булева переменная сравнивается другим способом
                 if (more == false)
+                    // Можно заменить на StringBuilder
                     newStr = newStr + str.charAt(i);
                 else
                     more = false;

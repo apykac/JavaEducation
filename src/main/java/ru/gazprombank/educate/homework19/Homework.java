@@ -9,6 +9,7 @@ public class Homework {
     public static int longestStreak (String str) {
         int count = 1;
         int countF = 1;
+        // Строки сравниваются методом equals
         if (str == "") return 0;
          else {
             for (int i = 0; i < str.length() - 1; i ++) {
@@ -21,6 +22,7 @@ public class Homework {
                     } else countF = 1;
             }
         }
+         // Форматирование кода плавает
         if (count < countF) count = countF;
         return count;
     }

@@ -8,6 +8,7 @@ public class Homework {
 
     public static int sumUnique (int a, int b, int c) {
         int sum = a + b + c;
+        // Одинарный оператор сравнения
         if ((a == b) & (a == c))
             sum = 0;
         else {
