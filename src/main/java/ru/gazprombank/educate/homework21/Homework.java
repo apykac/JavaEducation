@@ -7,16 +7,20 @@ public class Homework {
     }
 
     public static int count = 0;
+    public static String strN = "";
+    public static String strO = "";
 
     public static String endoo (String str) {
-        String strE = str;
-        if (str.length() == 0 || str.length() == 1) return str;
-        else {
-            if (str.charAt(0) == 'o') {
-                count ++;
-
-            } else ;
+        strN = str;
+        if (str.indexOf("o") == -1) {
+            strN = strN + strO;
+            strO = "";
+            return strN;
         }
-        return strE;
+        if (str.indexOf("o") == 0)
+            strN = str.substring(1);
+        else strN = str.substring(0,str.indexOf("o"))  + str.substring(str.indexOf("o") + 1);
+        strO = strO + "o";
+        return endoo(strN);
     }
 }
