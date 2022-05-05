@@ -10,7 +10,9 @@ public class Homework {
         int near = 0;
         boolean trA = false;
         boolean trB = false;
+        // Одинарный оператор сравнения
         if ((a > 21) & (b > 21))
+            // Это бессмысленно, переменная и так равна 0
             near = 0;
         else {
             if (a > 21) {
@@ -24,6 +26,7 @@ public class Homework {
             int a1 = 21 - a;
             int b1 = 21 - b;
             if (a1 < b1) {
+                // Булевы переменные сравниваются другим способом
                 if ((trA == false) & (trB == false))
                     near = a;
             }

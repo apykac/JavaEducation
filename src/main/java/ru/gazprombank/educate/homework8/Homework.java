@@ -8,6 +8,8 @@ public class Homework {
 
     public static boolean birdsSinging (int temp, boolean isSummer) {
         boolean song = false;
+        // Булеву переменную сравнивают другим способом
+        // Форматирование кода плавает
         if (isSummer == false) {
             if ((temp >= 60) & (temp <= 90))
                 song = true;

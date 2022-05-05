@@ -8,10 +8,12 @@ public class Homework {
 
     public static int partialSum (int a, int b, int c) {
         int sum = 0;
+        // Одинарные операторы сравнения
         if ((a != 13) & (b != 13) & (c !=13))
             sum = a + b + c;
         else {
             if (a == 13)
+                // Это бессмысленно
                 sum = 0;
             if ((a != 13) & (b == 13))
                 sum = a;
