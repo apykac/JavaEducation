@@ -14,7 +14,7 @@ public class Homework {
                     s += ints[i][j] + " ";
             }
         }
-        System.out.println(s);
+        System.out.print(s);
     }
 
     public static void main(String[] args) {

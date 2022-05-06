@@ -5,10 +5,11 @@ import java.util.Random;
 public class Homework {
 
     public static int[][] randomMatrix(int[][] mass) {
-        Random random = new Random();
+        int rand = 0;
         for (int i = 0; i < mass.length; i++) {
             for (int j = 0; j < mass[i].length; j++) {
-                mass[i][j] = random.nextInt((9 - 1) + 1) + 1;
+                rand = (int) (Math.random() * 9) + 1;
+                mass[i][j] = rand;
             }
         }
         return mass;
