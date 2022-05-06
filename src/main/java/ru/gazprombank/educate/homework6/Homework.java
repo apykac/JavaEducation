@@ -10,7 +10,7 @@ public class Homework {
         int pay = 0;
 
         if (!isHoliday) {
-           if ((speed > 60) & (speed <= 80)) {
+           if ((speed > 60) && (speed <= 80)) {
                pay = 100;
            }
            if (speed > 80) {
@@ -18,7 +18,7 @@ public class Homework {
            }
         }
         else {
-            if ((speed > 65) & (speed <= 85)) {
+            if ((speed > 65) && (speed <= 85)) {
                 pay = 100;
             }
             if (speed > 85) {

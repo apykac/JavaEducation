@@ -12,7 +12,7 @@ public class Homework {
         int count = 1;
         int countF = 1;
         // Строки сравниваются методом equals
-        if (Objects.equals(str,"")) {
+        if (str.equals("")) {
             return 0;
         } else {
             for (int i = 0; i < str.length() - 1; i ++) {
@@ -28,7 +28,6 @@ public class Homework {
                 }
             }
         }
-         // Форматирование кода плавает
         if (count < countF) {
             count = countF;
         }

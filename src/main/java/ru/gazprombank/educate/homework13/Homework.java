@@ -10,10 +10,7 @@ public class Homework {
         int near = 0;
         boolean trA = false;
         boolean trB = false;
-        if ((a > 21) && (b > 21))
-            // Это бессмысленно, переменная и так равна 0
-            near = 0;
-        else {
+        if ((a <= 21) || (b <= 21)) {
             if (a > 21) {
                 near = b;
                 trA = true;

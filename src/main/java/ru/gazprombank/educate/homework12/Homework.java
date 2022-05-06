@@ -10,8 +10,7 @@ public class Homework {
         int sum = a + b + c;
         if ((a == b) && (a == c)) {
             sum = 0;
-        }
-        else {
+        } else {
             if (a == b) {
                 sum = c;
             }

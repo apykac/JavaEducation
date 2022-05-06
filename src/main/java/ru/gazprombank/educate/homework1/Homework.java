@@ -16,9 +16,10 @@ public class Homework {
         Set<Character> ch = new HashSet<>(Arrays.asList(',', '.', ':', ';', '!', '?', '"', '#', '$', '&', '(', ')', '+', '-', '/', '>', '<', '=', '@', '[', ']', '^', '_', '`', '{', '}', '|', '~', '%', '*', '\\'));
 
         int count = 0;
-        for (int i = 0; i < s.length(); i++){
-            if (ch.contains(s.charAt(i)))
+        for (int i = 0; i < s.length(); i++) {
+            if (ch.contains(s.charAt(i))) {
                 count++;
+            }
         }
         return count;
     }

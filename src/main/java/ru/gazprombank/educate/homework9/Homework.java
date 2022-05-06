@@ -9,11 +9,10 @@ public class Homework {
     public static boolean isOrdered(int first, int second, int third, boolean itsOk) {
         boolean order = false;
         if (!itsOk) {
-            if ((first < second) & (second < third)) {
+            if ((first < second) && (second < third)) {
                 order = true;
             }
-        }
-        else {
+        } else {
             if (second < third) {
                 order = true;
             }

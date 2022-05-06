@@ -12,7 +12,7 @@ public class Homework {
         int count = 0;
         for (int i = 0; i < a.length; i ++) {
             // Строки сравниваются методом equals, т.к. операторы == и != сравнивают только ссылки строк, а тебе надо проверять содержимое строк
-              if ((!Objects.equals(a[i],"")) && (!Objects.equals(b[i],""))) {
+              if ((!a[i].equals("")) && (!b[i].equals(""))) {
                 if (Objects.equals(a[i].charAt(0), b[i].charAt(0))) {
                     count++;
                 }

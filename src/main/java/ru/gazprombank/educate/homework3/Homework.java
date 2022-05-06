@@ -11,7 +11,9 @@ public class Homework {
             for(int j = 0; j < matrix[i].length; j++) {
                 if (j == matrix[i].length - 1) {
                     System.out.print(matrix[i][j]);
-                } else System.out.print(matrix[i][j] + " ");
+                } else {
+                    System.out.print(matrix[i][j] + " ");
+                }
                 if (i == matrix.length - 1) {
                     endMatrix = true;
                 }
