@@ -13,41 +13,7 @@ public class Homework {
     public static int punctuationCount (String s) {
         s = s.replace("'",",");
 
-        // Можно сделать запись короче
-        // Set<Character> ch = new HashSet<>(Arrays.asList(',', '.', ':' и т.д));
-
-        HashSet <Character> ch = new HashSet<>();
-        ch.add(',');
-        ch.add('.');
-        ch.add(':');
-        ch.add(';');
-        ch.add('!');
-        ch.add('?');
-        ch.add('"');
-        ch.add('#');
-        ch.add('$');
-        ch.add('&');
-        ch.add('(');
-        ch.add(')');
-        ch.add('+');
-        ch.add('-');
-        ch.add('/');
-        ch.add('>');
-        ch.add('<');
-        ch.add('=');
-        ch.add('@');
-        ch.add('[');
-        ch.add(']');
-        ch.add('^');
-        ch.add('_');
-        ch.add('`');
-        ch.add('{');
-        ch.add('}');
-        ch.add('|');
-        ch.add('~');
-        ch.add('%');
-        ch.add('*');
-        ch.add('\\');
+        Set<Character> ch = new HashSet<>(Arrays.asList(',', '.', ':', ';', '!', '?', '"', '#', '$', '&', '(', ')', '+', '-', '/', '>', '<', '=', '@', '[', ']', '^', '_', '`', '{', '}', '|', '~', '%', '*', '\\'));
 
         int count = 0;
         for (int i = 0; i < s.length(); i++){

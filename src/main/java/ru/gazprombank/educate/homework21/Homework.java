@@ -12,14 +12,16 @@ public class Homework {
 
     public static String endoo (String str) {
         strN = str;
-        if (str.indexOf("o") == -1) {
+        if (!str.contains("o")) {
             strN = strN + strO;
             strO = "";
             return strN;
         }
-        if (str.indexOf("o") == 0)
+        if (str.indexOf("o") == 0) {
             strN = str.substring(1);
-        else strN = str.substring(0,str.indexOf("o"))  + str.substring(str.indexOf("o") + 1);
+        } else {
+            strN = str.substring(0,str.indexOf("o"))  + str.substring(str.indexOf("o") + 1);
+        }
         strO = strO + "o";
         return endoo(strN);
     }

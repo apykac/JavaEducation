@@ -11,21 +11,21 @@ public class Homework {
         boolean more = false;
         for (int i = 0; i < str.length(); i++) {
             if (str.charAt(i) == '*')  {
-                // Булева переменная сравнивается другим способом
-                if (more == false) {
+                if (!more) {
                     more = true;
-                    if (newStr.length() > 1)
+                    if (newStr.length() > 1) {
                         newStr = newStr.substring(0, newStr.length() - 1);
-                    else
+                    } else {
                         newStr = "";
+                    }
                 }
             } else {
-                // Булева переменная сравнивается другим способом
-                if (more == false)
-                    // Можно заменить на StringBuilder
-                    newStr = newStr + str.charAt(i);
-                else
+                if (!more) {
+                    //newStr = newStr + str.charAt(i);
+                    newStr = new StringBuilder().append(newStr).append(str.charAt(i)).toString();
+                } else {
                     more = false;
+                }
             }
         }
         return newStr;

@@ -9,16 +9,16 @@ public class Homework {
         boolean endMatrix = false;
         for(int i = 0; i < matrix.length; i++) {
             for(int j = 0; j < matrix[i].length; j++) {
-                // Тело условия без скобок { }, читаемость кода хуже
-                if (j == matrix[i].length - 1)
+                if (j == matrix[i].length - 1) {
                     System.out.print(matrix[i][j]);
-                else System.out.print(matrix[i][j] + " ");
-                if (i == matrix.length - 1)
+                } else System.out.print(matrix[i][j] + " ");
+                if (i == matrix.length - 1) {
                     endMatrix = true;
+                }
             }
-            // Идея подсказывает что выражение можно упростить, т.к. endMatrix типа boolean, и есть логическое НЕ !
-            if (endMatrix == false)
+            if (!endMatrix) {
                 System.out.print('\n');
+            }
         }
     }
 }

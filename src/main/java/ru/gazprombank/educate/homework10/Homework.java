@@ -9,9 +9,9 @@ public class Homework {
     public static boolean isCool (int n) {
         boolean cool = false;
         int mod = n % 11;
-        // Одинарные операторы сравнения
-        if ((mod == 0) | (mod == 1))
+        if ((mod == 0) || (mod == 1)) {
             cool = true;
+        }
         return cool;
     }
 }

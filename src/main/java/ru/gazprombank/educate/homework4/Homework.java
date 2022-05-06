@@ -8,15 +8,14 @@ public class Homework {
 
     }
 
-    // Тесты не проходят
     public static int [][] randomMatrix (int [][] matrix){
-        Random rnd = new Random();
-        for (int i = 0; i < matrix.length; i++)
+        for (int i = 0; i < matrix.length; i++) {
+            Random random = new Random();
             for (int j = 0; j < matrix[i].length; j++) {
-                matrix[i][j] = rnd.nextInt();
-                if (matrix[i][j] == 0)
-                    matrix[i][j] = (i+j+1)*i;
+                matrix[i][j] = 1 + random.nextInt(10);
+               // matrix[i][j] = (int) (1 + Math.random());
             }
+        }
         return matrix;
     }
 }
