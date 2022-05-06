@@ -4,8 +4,8 @@ import java.util.Objects;
 
 public class Homework {
 
-    public static String strN = "";
-    public static String strE = "";
+    public static StringBuilder strN = new StringBuilder();
+    public static StringBuilder strE = new StringBuilder();
     public static boolean rep = false;
 
     public static void main(String[] args) {
@@ -16,29 +16,29 @@ public class Homework {
 
         if (str.length() <= 1) {
             if (!rep) {
-                strN = new StringBuilder().append(strN).append(str).toString();
+                strN = strN.append(str);
             }
             rep = false;
             strE = strN;
-            strN = "";
-            return strE;
+            strN = new StringBuilder();
+            return strE.toString();
         }
 
         if (str.charAt(0) == str.charAt(1)) {
             if (!rep) {
-                strN = new StringBuilder().append(strN).append(str.charAt(0)).append("-").append(str.charAt(1)).toString();
+                strN = strN.append(str.charAt(0)).append("-").append(str.charAt(1));
             } else {
-                strN = new StringBuilder().append(strN).append("-").append(str.charAt(1)).toString();
+                strN = strN.append("-").append(str.charAt(1));
             }
             rep = true;
         } else {
             if (!rep) {
-                strN = new StringBuilder().append(strN).append(str.charAt(0)).toString();
+                strN = strN.append(str.charAt(0));
             }
             rep = false;
         }
 
-        strE = str.substring(1);
-        return hyphenSplit(strE);
+        strE = new StringBuilder(str.substring(1));
+        return hyphenSplit(strE.toString());
     }
 }

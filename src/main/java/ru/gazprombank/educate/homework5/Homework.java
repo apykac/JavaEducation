@@ -5,7 +5,7 @@ public class Homework {
     public static void main(String[] args) {
 
     }
-    // Недостает пробелов, форматирование текста надо поправить, условие без скобок { }
+
     public static String middleThree (String s) {
         int len = s.length();
         if (len < 3) {

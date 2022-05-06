@@ -8,11 +8,6 @@ public class Homework {
 
     public static int wordsCount (String[] words, int len) {
         int count = 0;
-        // Логичнее было бы цикл for заменить на цикл foreach
-//        for (int i = 0; i < words.length; i ++) {
-//            if (words[i].length() == len)
-//                count ++;
-//        }
         for (String word: words) {
             if (word.length() == len) {
                 count++;

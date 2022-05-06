@@ -13,7 +13,8 @@ public class Homework {
     public static int punctuationCount (String s) {
         s = s.replace("'",",");
 
-        Set<Character> ch = new HashSet<>(Arrays.asList(',', '.', ':', ';', '!', '?', '"', '#', '$', '&', '(', ')', '+', '-', '/', '>', '<', '=', '@', '[', ']', '^', '_', '`', '{', '}', '|', '~', '%', '*', '\\'));
+        Set<Character> ch = new HashSet<>(Arrays.asList(',', '.', ':', ';', '!', '?', '"', '#', '$', '&', '(', ')', '+',
+                '-', '/', '>', '<', '=', '@', '[', ']', '^', '_', '`', '{', '}', '|', '~', '%', '*', '\\'));
 
         int count = 0;
         for (int i = 0; i < s.length(); i++) {

@@ -7,10 +7,10 @@ public class Homework {
     }
 
     public static String repeatChar (String str) {
-        String strDouble = "";
+        StringBuilder strDouble = new StringBuilder();
         for (int i = 0; i < str.length(); i++) {
-            strDouble = new StringBuilder().append(strDouble).append(str.charAt(i)).append(str.charAt(i)).toString();
+            strDouble = strDouble.append(str.charAt(i)).append(str.charAt(i));
         }
-        return strDouble;
+        return strDouble.toString();
     }
 }

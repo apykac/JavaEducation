@@ -7,27 +7,26 @@ public class Homework {
     }
 
     public static String starKill (String str) {
-        String newStr = "";
+        StringBuilder newStr = new StringBuilder();
         boolean more = false;
         for (int i = 0; i < str.length(); i++) {
             if (str.charAt(i) == '*')  {
                 if (!more) {
                     more = true;
                     if (newStr.length() > 1) {
-                        newStr = newStr.substring(0, newStr.length() - 1);
+                        newStr = new StringBuilder(newStr.substring(0, newStr.length() - 1));
                     } else {
-                        newStr = "";
+                        newStr = new StringBuilder();
                     }
                 }
             } else {
                 if (!more) {
-                    //newStr = newStr + str.charAt(i);
-                    newStr = new StringBuilder().append(newStr).append(str.charAt(i)).toString();
+                    newStr = newStr.append(str.charAt(i));
                 } else {
                     more = false;
                 }
             }
         }
-        return newStr;
+        return newStr.toString();
     }
 }

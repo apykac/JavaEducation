@@ -4,8 +4,8 @@ import java.util.Objects;
 
 public class Homework {
 
-    public static String strN = "";
-    public static String strE = "";
+    public static StringBuilder strN = new StringBuilder();
+    public static StringBuilder strE = new StringBuilder();
     public static boolean isOK = false;
 
     public static void main(String[] args) {
@@ -14,20 +14,20 @@ public class Homework {
 
     public static String insideBrackets (String str) {
 
-        if (Objects.equals(str.charAt(0),']')) {
+        if (str.charAt(0) == ']') {
             isOK = false;
-            strN = new StringBuilder().append(strN).append(str.charAt(0)).toString();
+            strN = strN.append(str.charAt(0));
             strE = strN;
-            strN = "";
-            return strE;
+            strN = new StringBuilder();
+            return strE.toString();
         }
 
-        if ((Objects.equals(str.charAt(0),'[')) || (isOK)) {
+        if ((str.charAt(0) == '[') || (isOK)) {
             isOK = true;
-            strN = new StringBuilder().append(strN).append(str.charAt(0)).toString();
+            strN = strN.append(str.charAt(0));
         }
 
-        strE = str.substring(1);
-        return insideBrackets(strE);
+        strE = new StringBuilder(str.substring(1));
+        return insideBrackets(strE.toString());
     }
 }

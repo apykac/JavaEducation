@@ -2,7 +2,6 @@ package ru.gazprombank.educate.homework24;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
 
 public class Homework {
 

@@ -1,8 +1,8 @@
 package ru.gazprombank.educate.homework19;
 
-import java.util.Objects;
-
 public class Homework {
+
+    private final static String EMPTY_STRING = "";
 
     public static void main(String[] args) {
 
@@ -11,8 +11,7 @@ public class Homework {
     public static int longestStreak (String str) {
         int count = 1;
         int countF = 1;
-        // Строки сравниваются методом equals
-        if (str.equals("")) {
+        if (EMPTY_STRING.equals(str)) {
             return 0;
         } else {
             for (int i = 0; i < str.length() - 1; i ++) {

@@ -11,7 +11,7 @@ public class Homework {
 
     public static int yoYo (String str) {
         int countN = 0;
-        if ((str.length() <= 1) || (!str.contains("yo"))) {
+        if (!str.contains("yo")) {
             countN = count;
             count = 0;
             return countN;
