@@ -28,126 +28,126 @@ public class HomeworkTest {
 
     @DisplayName("str: 'ab*cd'; answer = 'ad'")
     @Test
-    void test1() {
+    void test1() throws Exception {
         String fine = calculateStarKillMethod.invokeStaticMethod("ab*cd");
         assertEquals("ad", fine, "Expected string: 'ad' actual " + fine);
     }
 
     @DisplayName("str: 'ab**cd'; answer = 'ad'")
     @Test
-    void test2() {
+    void test2() throws Exception {
         String fine = calculateStarKillMethod.invokeStaticMethod("ab**cd");
         assertEquals("ad", fine, "Expected string: 'ad' actual " + fine);
     }
 
     @DisplayName("str: 'sm*eilly'; answer = 'silly'")
     @Test
-    void test3() {
+    void test3() throws Exception {
         String fine = calculateStarKillMethod.invokeStaticMethod("sm*eilly");
         assertEquals("silly", fine, "Expected string: 'silly' actual " + fine);
     }
 
     @DisplayName("str: 'sm*eil*ly'; answer = 'siy'")
     @Test
-    void test4() {
+    void test4() throws Exception {
         String fine = calculateStarKillMethod.invokeStaticMethod("sm*eil*ly");
         assertEquals("siy", fine, "Expected string: 'siy' actual " + fine);
     }
 
     @DisplayName("str: 'sm**eil*ly'; answer = 'siy'")
     @Test
-    void test5() {
+    void test5() throws Exception {
         String fine = calculateStarKillMethod.invokeStaticMethod("sm**eil*ly");
         assertEquals("siy", fine, "Expected string: 'siy' actual " + fine);
     }
 
     @DisplayName("str: 'sm***eil*ly'; answer = 'siy'")
     @Test
-    void test6() {
+    void test6() throws Exception {
         String fine = calculateStarKillMethod.invokeStaticMethod("sm***eil*ly");
         assertEquals("siy", fine, "Expected string: 'siy' actual " + fine);
     }
 
     @DisplayName("str: 'stringy*'; answer = 'string'")
     @Test
-    void test7() {
+    void test7() throws Exception {
         String fine = calculateStarKillMethod.invokeStaticMethod("stringy*");
         assertEquals("string", fine, "Expected string: 'string' actual " + fine);
     }
 
     @DisplayName("str: '*stringy'; answer = 'tringy'")
     @Test
-    void test8() {
+    void test8() throws Exception {
         String fine = calculateStarKillMethod.invokeStaticMethod("*stringy");
         assertEquals("tringy", fine, "Expected string: 'tringy' actual " + fine);
     }
 
     @DisplayName("str: '*str*in*gy'; answer = 'ty'")
     @Test
-    void test9() {
+    void test9() throws Exception {
         String fine = calculateStarKillMethod.invokeStaticMethod("*str*in*gy");
         assertEquals("ty", fine, "Expected string: 'ty' actual " + fine);
     }
 
     @DisplayName("str: 'abc'; answer = 'abc'")
     @Test
-    void test10() {
+    void test10() throws Exception {
         String fine = calculateStarKillMethod.invokeStaticMethod("abc");
         assertEquals("abc", fine, "Expected string: 'abc' actual " + fine);
     }
 
     @DisplayName("str: 'a*bc'; answer = 'c'")
     @Test
-    void test11() {
+    void test11() throws Exception {
         String fine = calculateStarKillMethod.invokeStaticMethod("a*bc");
         assertEquals("c", fine, "Expected string: 'c' actual " + fine);
     }
 
     @DisplayName("str: 'ab'; answer = 'ab'")
     @Test
-    void test12() {
+    void test12() throws Exception {
         String fine = calculateStarKillMethod.invokeStaticMethod("ab");
         assertEquals("ab", fine, "Expected string: 'ab' actual " + fine);
     }
 
     @DisplayName("str: 'a*b'; answer = ''")
     @Test
-    void test13() {
+    void test13() throws Exception {
         String fine = calculateStarKillMethod.invokeStaticMethod("a*b");
         assertEquals("", fine, "Expected string: '' actual " + fine);
     }
 
     @DisplayName("str: 'a'; answer = 'a'")
     @Test
-    void test14() {
+    void test14() throws Exception {
         String fine = calculateStarKillMethod.invokeStaticMethod("a");
         assertEquals("a", fine, "Expected string: 'a' actual " + fine);
     }
 
     @DisplayName("str: 'a*'; answer = ''")
     @Test
-    void test15() {
+    void test15() throws Exception {
         String fine = calculateStarKillMethod.invokeStaticMethod("a*");
         assertEquals("", fine, "Expected string: '' actual " + fine);
     }
 
     @DisplayName("str: '*a'; answer = ''")
     @Test
-    void test16() {
+    void test16() throws Exception {
         String fine = calculateStarKillMethod.invokeStaticMethod("*a");
         assertEquals("", fine, "Expected string: '' actual " + fine);
     }
 
     @DisplayName("str: '*'; answer = ''")
     @Test
-    void test17() {
+    void test17() throws Exception {
         String fine = calculateStarKillMethod.invokeStaticMethod("*");
         assertEquals("", fine, "Expected string: '' actual " + fine);
     }
 
     @DisplayName("str: ''; answer = ''")
     @Test
-    void test18() {
+    void test18() throws Exception {
         String fine = calculateStarKillMethod.invokeStaticMethod("");
         assertEquals("", fine, "Expected string: '' actual " + fine);
     }

@@ -28,63 +28,63 @@ public class HomeworkTest {
 
     @DisplayName("str: 'The'; answer = 'TThhee'")
     @Test
-    void test1() {
+    void test1() throws Exception {
         String fine = calculateRepeatCharMethod.invokeStaticMethod("The");
         assertEquals("TThhee", fine, "Expected string: 'TThhee' actual " + fine);
     }
 
     @DisplayName("str: 'AAbb'; answer = 'AAAAbbbb'")
     @Test
-    void test2() {
+    void test2() throws Exception {
         String fine = calculateRepeatCharMethod.invokeStaticMethod("AAbb");
         assertEquals("AAAAbbbb", fine, "Expected string: 'AAAAbbbb' actual " + fine);
     }
 
     @DisplayName("str: 'Hi-There'; answer = 'HHii--TThheerree'")
     @Test
-    void test3() {
+    void test3() throws Exception {
         String fine = calculateRepeatCharMethod.invokeStaticMethod("Hi-There");
         assertEquals("HHii--TThheerree", fine, "Expected string: 'HHii--TThheerree' actual " + fine);
     }
 
     @DisplayName("str: 'Word!'; answer = 'WWoorrdd!!'")
     @Test
-    void test4() {
+    void test4() throws Exception {
         String fine = calculateRepeatCharMethod.invokeStaticMethod("Word!");
         assertEquals("WWoorrdd!!", fine, "Expected string: 'WWoorrdd!!' actual " + fine);
     }
 
     @DisplayName("str: '!!'; answer = '!!!!'")
     @Test
-    void test5() {
+    void test5() throws Exception {
         String fine = calculateRepeatCharMethod.invokeStaticMethod("!!");
         assertEquals("!!!!", fine, "Expected string: '!!!!' actual " + fine);
     }
 
     @DisplayName("str: ''; answer = ''")
     @Test
-    void test6() {
+    void test6() throws Exception {
         String fine = calculateRepeatCharMethod.invokeStaticMethod("");
         assertEquals("", fine, "Expected string: '' actual " + fine);
     }
 
     @DisplayName("str: 'a'; answer = 'aa'")
     @Test
-    void test7() {
+    void test7() throws Exception {
         String fine = calculateRepeatCharMethod.invokeStaticMethod("a");
         assertEquals("aa", fine, "Expected string: 'aa' actual " + fine);
     }
 
     @DisplayName("str: '.'; answer = '..'")
     @Test
-    void test8() {
+    void test8() throws Exception {
         String fine = calculateRepeatCharMethod.invokeStaticMethod(".");
         assertEquals("..", fine, "Expected string: '..' actual " + fine);
     }
 
     @DisplayName("str: 'aa'; answer = 'aaaa'")
     @Test
-    void test9() {
+    void test9() throws Exception {
         String fine = calculateRepeatCharMethod.invokeStaticMethod("aa");
         assertEquals("aaaa", fine, "Expected string: 'aaaa' actual " + fine);
     }

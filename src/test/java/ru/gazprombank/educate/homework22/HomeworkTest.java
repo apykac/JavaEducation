@@ -28,70 +28,70 @@ public class HomeworkTest {
 
     @DisplayName("str: 'hello'; answer = 'hel-lo'")
     @Test
-    void test1() {
+    void test1() throws Exception {
         String fine = calculateHyphenSplitMethod.invokeStaticMethod("hello");
         assertEquals("hel-lo", fine, "Expected string: 'hel-lo' actual " + fine);
     }
 
     @DisplayName("str: 'xxyy'; answer = 'x-xy-y'")
     @Test
-    void test2() {
+    void test2() throws Exception {
         String fine = calculateHyphenSplitMethod.invokeStaticMethod("xxyy");
         assertEquals("x-xy-y", fine, "Expected string: 'x-xy-y' actual " + fine);
     }
 
     @DisplayName("str: 'aaaa'; answer = 'a-a-a-a'")
     @Test
-    void test3() {
+    void test3() throws Exception {
         String fine = calculateHyphenSplitMethod.invokeStaticMethod("aaaa");
         assertEquals("a-a-a-a", fine, "Expected string: 'a-a-a-a' actual " + fine);
     }
 
     @DisplayName("str: 'aaab'; answer = 'a-a-ab'")
     @Test
-    void test4() {
+    void test4() throws Exception {
         String fine = calculateHyphenSplitMethod.invokeStaticMethod("aaab");
         assertEquals("a-a-ab", fine, "Expected string: 'a-a-ab' actual " + fine);
     }
 
     @DisplayName("str: 'aa'; answer = 'a-a'")
     @Test
-    void test5() {
+    void test5() throws Exception {
         String fine = calculateHyphenSplitMethod.invokeStaticMethod("aa");
         assertEquals("a-a", fine, "Expected string: 'a-a' actual " + fine);
     }
 
     @DisplayName("str: 'a'; answer = 'a'")
     @Test
-    void test6() {
+    void test6() throws Exception {
         String fine = calculateHyphenSplitMethod.invokeStaticMethod("a");
         assertEquals("a", fine, "Expected string: 'a' actual " + fine);
     }
 
     @DisplayName("str: ''; answer = ''")
     @Test
-    void test7() {
+    void test7() throws Exception {
         String fine = calculateHyphenSplitMethod.invokeStaticMethod("");
         assertEquals("", fine, "Expected string: '' actual " + fine);
     }
 
     @DisplayName("str: 'noadjacent'; answer = 'noadjacent'")
     @Test
-    void test8() {
+    void test8() throws Exception {
         String fine = calculateHyphenSplitMethod.invokeStaticMethod("noadjacent");
         assertEquals("noadjacent", fine, "Expected string: 'noadjacent' actual " + fine);
     }
 
     @DisplayName("str: 'abba'; answer = 'ab-ba'")
     @Test
-    void test9() {
+    void test9() throws Exception {
         String fine = calculateHyphenSplitMethod.invokeStaticMethod("abba");
         assertEquals("ab-ba", fine, "Expected string: 'ab-ba' actual " + fine);
     }
 
     @DisplayName("str: 'abbba'; answer = 'ab-b-ba'")
     @Test
-    void test10() {
+    void test10() throws Exception {
         String fine = calculateHyphenSplitMethod.invokeStaticMethod("abbba");
         assertEquals("ab-b-ba", fine, "Expected string: 'ab-b-ba' actual " + fine);
     }

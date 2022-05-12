@@ -12,13 +12,15 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class TestMethod extends EqualsHashCodeClass<TestMethod> {
+    private final TestClass owner;
     private final Method method;
     private final String name;
     private final TestClass returnType;
     private final List<TestClass> parameters;
     private final List<Modifier> modifiers;
 
-    public TestMethod(Method method) {
+    public TestMethod(TestClass owner, Method method) {
+        this.owner = owner;
         this.method = method;
         name = this.method.getName();
         returnType = ClassCash.getClass(method.getReturnType());
@@ -28,20 +30,61 @@ public class TestMethod extends EqualsHashCodeClass<TestMethod> {
         modifiers = Modifier.getModifiers(method);
     }
 
-    public <T> T invokeStaticMethod(Object... args) {
+    public <T> T invokeStaticMethod(Object... args) throws Exception {
+        return invokeStaticMethod(null, null, args);
+    }
+
+    public void invokeVoidMethod(Object o, Object... args) throws Exception {
+        invokeVoidMethod(null, o, args);
+    }
+
+    public void invokeStaticVoidMethod(Object... args) throws Exception {
+        invokeStaticVoidMethod(null, args);
+    }
+
+    public <T> T invokeMethod(Object o, Object... args) throws Exception {
+        return invokeMethod(null, o, args);
+    }
+
+    public <T> T invokeStaticMethod(List<Class<? extends Exception>> exceptionClasses, Object... args) throws Exception {
         if (!modifiers.contains(Modifier.STATIC)) {
-            throw new MethodInvokeTestException("Try to call static method that not static: '" + this + "'");
+            throw new MethodInvokeTestException(owner, name, returnType, modifiers, parameters, "method not static");
         } else {
-            return invokeMethod(null, args);
+            return invokeMethod(exceptionClasses, null, args);
+        }
+    }
+
+    public void invokeVoidMethod(List<Class<? extends Exception>> exceptionClasses, Object o, Object... args) throws Exception {
+        if (returnType != ClassCash.getClass(void.class)) {
+            throw new MethodInvokeTestException(owner, name, returnType, modifiers, parameters, "method not void");
+        } else {
+            invokeMethod(exceptionClasses, o, args);
+        }
+    }
+
+    public void invokeStaticVoidMethod(List<Class<? extends Exception>> exceptionClasses, Object... args) throws Exception {
+        if (!modifiers.contains(Modifier.STATIC) || returnType != ClassCash.getClass(void.class)) {
+            throw new MethodInvokeTestException(owner, name, returnType, modifiers, parameters, "method not static void");
+        } else {
+            invokeMethod(exceptionClasses, null, args);
         }
     }
 
     @SuppressWarnings("unchecked")
-    public <T> T invokeMethod(Object o, Object... args) {
+    public <T> T invokeMethod(List<Class<? extends Exception>> exceptionClasses, Object o, Object... args) throws Exception {
         try {
             return (T) method.invoke(o, args);
-        } catch (InvocationTargetException | IllegalAccessException | ClassCastException e) {
-            throw new MethodInvokeTestException("Can't invoke method '" + this + "' cause: " + e.getMessage(), e);
+        } catch (InvocationTargetException e) {
+            if (exceptionClasses != null &&
+                    !exceptionClasses.isEmpty() &&
+                    e.getCause() != null &&
+                    exceptionClasses.stream().anyMatch(exceptionClass -> e.getCause().getClass() == exceptionClass)) {
+                throw (Exception) e.getCause();
+            } else {
+                throw new MethodInvokeTestException(owner, name, returnType, modifiers, parameters, e.getMessage(), e);
+            }
+        } catch (Exception e) {
+            throw new MethodInvokeTestException(owner, name, returnType, modifiers, parameters, e.getMessage(), e);
         }
     }
 
