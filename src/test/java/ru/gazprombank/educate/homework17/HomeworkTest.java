@@ -28,42 +28,42 @@ public class HomeworkTest {
 
     @DisplayName("words: ['a', 'bb', 'b', 'ccc'], len: 1; answer = 2")
     @Test
-    void test1() {
+    void test1() throws Exception {
         int fine = calculateWordsCountMethod.invokeStaticMethod(new String[]{"a", "bb", "b", "ccc"}, 1);
         assertEquals(2, fine, "Expected string: 2 actual " + fine);
     }
 
     @DisplayName("words: ['a', 'bb', 'b', 'ccc'], len: 3; answer = 1")
     @Test
-    void test2() {
+    void test2() throws Exception {
         int fine = calculateWordsCountMethod.invokeStaticMethod(new String[]{"a", "bb", "b", "ccc"}, 3);
         assertEquals(1, fine, "Expected string: 1 actual " + fine);
     }
 
     @DisplayName("words: ['a', 'bb', 'b', 'ccc'], len: 4; answer = 0")
     @Test
-    void test3() {
+    void test3() throws Exception {
         int fine = calculateWordsCountMethod.invokeStaticMethod(new String[]{"a", "bb", "b", "ccc"}, 4);
         assertEquals(0, fine, "Expected string: 0 actual " + fine);
     }
 
     @DisplayName("words: ['xx', 'yyy', 'x', 'yy', 'z'], len: 1; answer = 2")
     @Test
-    void test4() {
+    void test4() throws Exception {
         int fine = calculateWordsCountMethod.invokeStaticMethod(new String[]{"xx", "yyy", "x", "yy", "z"}, 1);
         assertEquals(2, fine, "Expected string: 2 actual " + fine);
     }
 
     @DisplayName("words: ['xx', 'yyy', 'x', 'yy', 'z'], len: 2; answer = 2")
     @Test
-    void test5() {
+    void test5() throws Exception {
         int fine = calculateWordsCountMethod.invokeStaticMethod(new String[]{"xx", "yyy", "x", "yy", "z"}, 2);
         assertEquals(2, fine, "Expected string: 2 actual " + fine);
     }
 
     @DisplayName("words: ['xx', 'yyy', 'x', 'yy', 'z'], len: 3; answer = 1")
     @Test
-    void test6() {
+    void test6() throws Exception {
         int fine = calculateWordsCountMethod.invokeStaticMethod(new String[]{"xx", "yyy", "x", "yy", "z"}, 3);
         assertEquals(1, fine, "Expected string: 1 actual " + fine);
     }

@@ -9,13 +9,15 @@ import java.util.List;
 public class FieldNotFoundTestException extends RuntimeException {
     private static final long serialVersionUID = 466805795745947615L;
 
-    public FieldNotFoundTestException(String fieldName,
+    public FieldNotFoundTestException(TestClass owner,
+                                      String fieldName,
                                       List<Modifier> modifiers,
                                       TestClass fieldType) {
-        super(buildMessage(fieldName, modifiers, fieldType));
+        super(buildMessage(owner, fieldName, modifiers, fieldType));
     }
 
-    private static String buildMessage(String fieldName,
+    private static String buildMessage(TestClass owner,
+                                       String fieldName,
                                        List<Modifier> modifiers,
                                        TestClass fieldType) {
         StringBuilder builder = new StringBuilder();
@@ -24,7 +26,7 @@ public class FieldNotFoundTestException extends RuntimeException {
         if (modifiers != null && !modifiers.isEmpty()) {
             builder.append(' ');
         }
-        builder.append(fieldType).append(' ').append(fieldName).append("' not found");
+        builder.append(fieldType).append(' ').append(owner.getSimpleName()).append('.').append(fieldName).append("' not found");
         return builder.toString();
     }
 }

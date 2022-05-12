@@ -9,14 +9,16 @@ import java.util.List;
 public class MethodNotFoundTestException extends RuntimeException {
     private static final long serialVersionUID = 7672855310529710723L;
 
-    public MethodNotFoundTestException(String methodName,
+    public MethodNotFoundTestException(TestClass ownerClass,
+                                       String methodName,
                                        TestClass returnedTypeClass,
                                        List<Modifier> modifiers,
                                        List<TestClass> parameterTypeClasses) {
-        super(buildMessage(methodName, returnedTypeClass, modifiers, parameterTypeClasses));
+        super(buildMessage(ownerClass, methodName, returnedTypeClass, modifiers, parameterTypeClasses));
     }
 
-    private static String buildMessage(String methodName,
+    private static String buildMessage(TestClass ownerClass,
+                                       String methodName,
                                        TestClass returnedTypeClass,
                                        List<Modifier> modifiers,
                                        List<TestClass> parameterTypeClasses) {
@@ -26,7 +28,7 @@ public class MethodNotFoundTestException extends RuntimeException {
         if (modifiers != null && !modifiers.isEmpty()) {
             builder.append(' ');
         }
-        builder.append(returnedTypeClass).append(' ').append(methodName).append('(');
+        builder.append(returnedTypeClass).append(' ').append(ownerClass.getSimpleName()).append('.').append(methodName).append('(');
         StringUtils.fillBuilderWithJoin(builder, parameterTypeClasses, ", ");
         builder.append(")' not found");
         return builder.toString();

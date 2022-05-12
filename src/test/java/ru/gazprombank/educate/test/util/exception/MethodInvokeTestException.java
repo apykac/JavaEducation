@@ -1,22 +1,68 @@
 package ru.gazprombank.educate.test.util.exception;
 
-public class MethodInvokeTestException extends RuntimeException{
-    public MethodInvokeTestException() {
+import ru.gazprombank.educate.test.util.Modifier;
+import ru.gazprombank.educate.test.util.StringUtils;
+import ru.gazprombank.educate.test.util.reflection.TestClass;
+
+import java.util.List;
+
+public class MethodInvokeTestException extends RuntimeException {
+    private static final long serialVersionUID = 472515426824261190L;
+
+    public MethodInvokeTestException(TestClass owner,
+                                     String methodName,
+                                     TestClass returnedTypeClass,
+                                     List<Modifier> modifiers,
+                                     List<TestClass> parameterTypeClasses) {
+        super(buildMessage(owner, methodName, returnedTypeClass, modifiers, parameterTypeClasses, null));
     }
 
-    public MethodInvokeTestException(String message) {
-        super(message);
+    public MethodInvokeTestException(TestClass owner,
+                                     String methodName,
+                                     TestClass returnedTypeClass,
+                                     List<Modifier> modifiers,
+                                     List<TestClass> parameterTypeClasses,
+                                     String message) {
+        super(buildMessage(owner, methodName, returnedTypeClass, modifiers, parameterTypeClasses, message));
     }
 
-    public MethodInvokeTestException(String message, Throwable cause) {
-        super(message, cause);
+    public MethodInvokeTestException(TestClass owner,
+                                     String methodName,
+                                     TestClass returnedTypeClass,
+                                     List<Modifier> modifiers,
+                                     List<TestClass> parameterTypeClasses,
+                                     Throwable cause) {
+        super(buildMessage(owner, methodName, returnedTypeClass, modifiers, parameterTypeClasses, null), cause);
     }
 
-    public MethodInvokeTestException(Throwable cause) {
-        super(cause);
+    public MethodInvokeTestException(TestClass owner,
+                                     String methodName,
+                                     TestClass returnedTypeClass,
+                                     List<Modifier> modifiers,
+                                     List<TestClass> parameterTypeClasses,
+                                     String message,
+                                     Throwable cause) {
+        super(buildMessage(owner, methodName, returnedTypeClass, modifiers, parameterTypeClasses, message), cause);
     }
 
-    public MethodInvokeTestException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
-        super(message, cause, enableSuppression, writableStackTrace);
+    private static String buildMessage(TestClass owner,
+                                       String methodName,
+                                       TestClass returnedTypeClass,
+                                       List<Modifier> modifiers,
+                                       List<TestClass> parameterTypeClasses,
+                                       String message) {
+        StringBuilder builder = new StringBuilder();
+        builder.append("method '");
+        StringUtils.fillBuilderWithJoin(builder, modifiers, " ");
+        if (modifiers != null && !modifiers.isEmpty()) {
+            builder.append(' ');
+        }
+        builder.append(returnedTypeClass).append(' ').append(owner.getSimpleName()).append('.').append(methodName).append('(');
+        StringUtils.fillBuilderWithJoin(builder, parameterTypeClasses, ", ");
+        builder.append(")' invoke exception");
+        if (message != null) {
+            builder.append(": ").append(message);
+        }
+        return builder.toString();
     }
 }

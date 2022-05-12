@@ -3,6 +3,7 @@ package ru.gazprombank.educate.test.util.reflection;
 import ru.gazprombank.educate.test.util.Modifier;
 import ru.gazprombank.educate.test.util.StringUtils;
 import ru.gazprombank.educate.test.util.exception.ClassNotFoundTestException;
+import ru.gazprombank.educate.test.util.exception.ConstructorNotFoundTestException;
 import ru.gazprombank.educate.test.util.exception.FieldNotFoundTestException;
 import ru.gazprombank.educate.test.util.exception.MethodNotFoundTestException;
 
@@ -37,7 +38,7 @@ public class TestClass extends EqualsHashCodeClass<TestClass> {
                     .map(field -> new TestField(this, field))
                     .collect(Collectors.toUnmodifiableList());
             methods = Stream.of(clazz.getDeclaredMethods())
-                    .map(TestMethod::new)
+                    .map(method -> new TestMethod(this, method))
                     .collect(Collectors.toUnmodifiableList());
         } else {
             modifiers = Collections.emptyList();
@@ -96,7 +97,7 @@ public class TestClass extends EqualsHashCodeClass<TestClass> {
                         equalsLists(method.getParameters(), parameterTypeClasses)
                 )
                 .findFirst()
-                .orElseThrow(() -> new MethodNotFoundTestException(methodName, returnedTypeClass, modifiers, parameterTypeClasses));
+                .orElseThrow(() -> new MethodNotFoundTestException(this, methodName, returnedTypeClass, modifiers, parameterTypeClasses));
     }
 
     public TestField getField(String fieldName,
@@ -108,7 +109,15 @@ public class TestClass extends EqualsHashCodeClass<TestClass> {
                         equalsLists(field.getModifiers(), modifiers)
                 )
                 .findFirst()
-                .orElseThrow(() -> new FieldNotFoundTestException(fieldName, modifiers, fieldType));
+                .orElseThrow(() -> new FieldNotFoundTestException(this, fieldName, modifiers, fieldType));
+    }
+
+    public TestConstructor getConstructor(List<Modifier> modifiers,
+                                          List<TestClass> parameterTypeClasses) {
+        return constructors.stream()
+                .filter(constructor -> equalsLists(constructor.getParameters(), parameterTypeClasses == null ? Collections.emptyList() : parameterTypeClasses))
+                .findFirst()
+                .orElseThrow(() -> new ConstructorNotFoundTestException(this, modifiers, parameterTypeClasses));
     }
 
     public boolean instanceOf(Class<?> parent) {
@@ -159,6 +168,10 @@ public class TestClass extends EqualsHashCodeClass<TestClass> {
                 hashList(fields),
                 hashList(methods)
         );
+    }
+
+    public String getSimpleName() {
+        return name;
     }
 
     @Override

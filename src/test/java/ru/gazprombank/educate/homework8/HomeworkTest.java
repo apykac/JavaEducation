@@ -29,91 +29,91 @@ public class HomeworkTest {
 
     @DisplayName("temp: 70, isSummer: false; answer = true")
     @Test
-    void test1() {
+    void test1() throws Exception {
         boolean fine = calculateBirdsSingingMethod.invokeStaticMethod(70, false);
         assertTrue(fine, "Expected string: 'true' actual " + fine);
     }
 
     @DisplayName("temp: 95, isSummer: true; answer = true")
     @Test
-    void test2() {
+    void test2() throws Exception {
         boolean fine = calculateBirdsSingingMethod.invokeStaticMethod(95, true);
         assertTrue(fine, "Expected string: 'true' actual " + fine);
     }
 
     @DisplayName("temp: 90, isSummer: false; answer = true")
     @Test
-    void test3() {
+    void test3() throws Exception {
         boolean fine = calculateBirdsSingingMethod.invokeStaticMethod(90, false);
         assertTrue(fine, "Expected string: 'true' actual " + fine);
     }
 
     @DisplayName("temp: 90, isSummer: true; answer = true")
     @Test
-    void test4() {
+    void test4() throws Exception {
         boolean fine = calculateBirdsSingingMethod.invokeStaticMethod(90, true);
         assertTrue(fine, "Expected string: 'true' actual " + fine);
     }
 
     @DisplayName("temp: 100, isSummer: true; answer = true")
     @Test
-    void test5() {
+    void test5() throws Exception {
         boolean fine = calculateBirdsSingingMethod.invokeStaticMethod(100, true);
         assertTrue(fine, "Expected string: 'true' actual " + fine);
     }
 
     @DisplayName("temp: 60, isSummer: false; answer = true")
     @Test
-    void test6() {
+    void test6() throws Exception {
         boolean fine = calculateBirdsSingingMethod.invokeStaticMethod(60, false);
         assertTrue(fine, "Expected string: 'true' actual " + fine);
     }
 
     @DisplayName("temp: 95, isSummer: false; answer = false")
     @Test
-    void test7() {
+    void test7() throws Exception {
         boolean fine = calculateBirdsSingingMethod.invokeStaticMethod(95, false);
         assertFalse(fine, "Expected string: 'false' actual " + fine);
     }
 
     @DisplayName("temp: 50, isSummer: false; answer = false")
     @Test
-    void test8() {
+    void test8() throws Exception {
         boolean fine = calculateBirdsSingingMethod.invokeStaticMethod(50, false);
         assertFalse(fine, "Expected string: 'false' actual " + fine);
     }
 
     @DisplayName("temp: 50, isSummer: true; answer = false")
     @Test
-    void test9() {
+    void test9() throws Exception {
         boolean fine = calculateBirdsSingingMethod.invokeStaticMethod(50, false);
         assertFalse(fine, "Expected string: 'false' actual " + fine);
     }
 
     @DisplayName("temp: 100, isSummer: false; answer = false")
     @Test
-    void test10() {
+    void test10() throws Exception {
         boolean fine = calculateBirdsSingingMethod.invokeStaticMethod(100, false);
         assertFalse(fine, "Expected string: 'false' actual " + fine);
     }
 
     @DisplayName("temp: 105, isSummer: true; answer = false")
     @Test
-    void test11() {
+    void test11() throws Exception {
         boolean fine = calculateBirdsSingingMethod.invokeStaticMethod(105, false);
         assertFalse(fine, "Expected string: 'false' actual " + fine);
     }
 
     @DisplayName("temp: 59, isSummer: false; answer = false")
     @Test
-    void test12() {
+    void test12() throws Exception {
         boolean fine = calculateBirdsSingingMethod.invokeStaticMethod(59, false);
         assertFalse(fine, "Expected string: 'false' actual " + fine);
     }
 
     @DisplayName("temp: 59, isSummer: true; answer = false")
     @Test
-    void test13() {
+    void test13() throws Exception {
         boolean fine = calculateBirdsSingingMethod.invokeStaticMethod(59, false);
         assertFalse(fine, "Expected string: 'false' actual " + fine);
     }
