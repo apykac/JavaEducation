@@ -32,7 +32,7 @@ class HomeworkTest {
 
     @BeforeEach
     void setUp() {
-        catClass = ClassCash.getClass("Cat");
+        catClass = ClassCash.getClass("ru.gazprombank.educate.homework26.Cat");
     }
 
     @DisplayName("'name' field exist")
