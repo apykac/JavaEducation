@@ -30,28 +30,28 @@ class HomeworkTest {
 
     @DisplayName("sides: 3, 4, 5; answer = 6")
     @Test
-    void test1() {
+    void test1() throws Exception {
         double area = calculateTriangleAreaMethod.invokeStaticMethod(3, 4, 5);
         assertEquals(6d, area, "Triangle area must be '6' actual: '" + area + "'");
     }
 
     @DisplayName("sides: 8, 4, 7; answer = 13.998")
     @Test
-    void test2() {
+    void test2() throws Exception {
         double area = calculateTriangleAreaMethod.invokeStaticMethod(8, 4, 7);
         assertEquals(13.998d, area, "Triangle area must be '13.998' actual: '" + area + "'");
     }
 
     @DisplayName("sides: 7, 18, 24; answer = 37.329")
     @Test
-    void test3() {
+    void test3() throws Exception {
         double area = calculateTriangleAreaMethod.invokeStaticMethod(7, 18, 24);
         assertEquals(37.329d, area, "Triangle area must be '37.329' actual: '" + area + "'");
     }
 
     @DisplayName("sides: 8, 100, 7; exception - triangle not exist")
     @Test
-    void test4() {
+    void test4() throws Exception {
         try {
             double area = calculateTriangleAreaMethod.invokeStaticMethod(8, 100, 7);
             fail("Must be exception thrown");
@@ -62,7 +62,7 @@ class HomeworkTest {
 
     @DisplayName("sides: 8, -1, 7; exception - triangle not exist")
     @Test
-    void test5() {
+    void test5() throws Exception {
         try {
             double area = calculateTriangleAreaMethod.invokeStaticMethod(8, -1, 7);
             fail("Must be exception thrown");
@@ -73,7 +73,7 @@ class HomeworkTest {
 
     @DisplayName("sides: 8, 0, 7; exception - triangle not exist")
     @Test
-    void test6() {
+    void test6() throws Exception {
         try {
             double area = calculateTriangleAreaMethod.invokeStaticMethod(8, 0, 7);
             fail("Must be exception thrown");

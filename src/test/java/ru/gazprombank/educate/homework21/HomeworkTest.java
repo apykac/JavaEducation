@@ -28,91 +28,91 @@ public class HomeworkTest {
 
     @DisplayName("str: 'oore'; answer = 'reoo'")
     @Test
-    void test1() {
+    void test1() throws Exception {
         String fine = calculateEndooMethod.invokeStaticMethod("oore");
         assertEquals("reoo", fine, "Expected string: 'reoo' actual " + fine);
     }
 
     @DisplayName("str: 'oohioo'; answer = 'hioooo'")
     @Test
-    void test2() {
+    void test2() throws Exception {
         String fine = calculateEndooMethod.invokeStaticMethod("oohioo");
         assertEquals("hioooo", fine, "Expected string: 'hioooo' actual " + fine);
     }
 
     @DisplayName("str: 'ohiohio'; answer = 'hihiooo'")
     @Test
-    void test3() {
+    void test3() throws Exception {
         String fine = calculateEndooMethod.invokeStaticMethod("ohiohio");
         assertEquals("hihiooo", fine, "Expected string: 'hihiooo' actual " + fine);
     }
 
     @DisplayName("str: 'hiy'; answer = 'hiy'")
     @Test
-    void test4() {
+    void test4() throws Exception {
         String fine = calculateEndooMethod.invokeStaticMethod("hiy");
         assertEquals("hiy", fine, "Expected string: 'hiy' actual " + fine);
     }
 
     @DisplayName("str: 'h'; answer = 'h'")
     @Test
-    void test5() {
+    void test5() throws Exception {
         String fine = calculateEndooMethod.invokeStaticMethod("h");
         assertEquals("h", fine, "Expected string: 'h' actual " + fine);
     }
 
     @DisplayName("str: ''; answer = ''")
     @Test
-    void test6() {
+    void test6() throws Exception {
         String fine = calculateEndooMethod.invokeStaticMethod("");
         assertEquals("", fine, "Expected string: '' actual " + fine);
     }
 
     @DisplayName("str: 'o'; answer = 'o'")
     @Test
-    void test7() {
+    void test7() throws Exception {
         String fine = calculateEndooMethod.invokeStaticMethod("o");
         assertEquals("o", fine, "Expected string: 'o' actual " + fine);
     }
 
     @DisplayName("str: 'oo'; answer = 'oo'")
     @Test
-    void test8() {
+    void test8() throws Exception {
         String fine = calculateEndooMethod.invokeStaticMethod("oo");
         assertEquals("oo", fine, "Expected string: 'oo' actual " + fine);
     }
 
     @DisplayName("str: 'boo'; answer = 'boo'")
     @Test
-    void test9() {
+    void test9() throws Exception {
         String fine = calculateEndooMethod.invokeStaticMethod("boo");
         assertEquals("boo", fine, "Expected string: 'boo' actual " + fine);
     }
 
     @DisplayName("str: 'boao'; answer = 'baoo'")
     @Test
-    void test10() {
+    void test10() throws Exception {
         String fine = calculateEndooMethod.invokeStaticMethod("boao");
         assertEquals("baoo", fine, "Expected string: 'baoo' actual " + fine);
     }
 
     @DisplayName("str: 'aoaoao'; answer = 'aaaooo'")
     @Test
-    void test11() {
+    void test11() throws Exception {
         String fine = calculateEndooMethod.invokeStaticMethod("aoaoao");
         assertEquals("aaaooo", fine, "Expected string: 'aaaooo' actual " + fine);
     }
 
     @DisplayName("str: 'oohoi'; answer = 'hiooo'")
     @Test
-    void test12() {
+    void test12() throws Exception {
         String fine = calculateEndooMethod.invokeStaticMethod("oohoi");
         assertEquals("hiooo", fine, "Expected string: 'hiooo' actual " + fine);
     }
 
     @DisplayName("str: 'oanotgo'; answer = 'antgooo'")
     @Test
-    void test13() {
+    void test13() throws Exception {
         String fine = calculateEndooMethod.invokeStaticMethod("oanotgo");
         assertEquals("antgooo", fine, "Expected string: 'antgooo' actual " + fine);
     }

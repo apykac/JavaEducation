@@ -38,28 +38,28 @@ class HomeworkTest {
 
     @DisplayName("1 2 3\n4 5 6\n7 8 9")
     @Test
-    void test1() {
+    void test1() throws Exception {
         printMatrix.invokeStaticMethod(new Object[]{new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}});
         PRINT_WRAPPER.off();
         System.out.println(PRINT_WRAPPER.getOutString());
-        Assertions.assertEquals(PRINT_WRAPPER.getOutString(), "1 2 3\n4 5 6\n7 8 9");
+        Assertions.assertEquals("1 2 3\n4 5 6\n7 8 9", PRINT_WRAPPER.getOutString());
     }
 
     @DisplayName("1 2 3 4\n4 5 6 45\n7 8 9 12")
     @Test
-    void test2() {
+    void test2() throws Exception {
         printMatrix.invokeStaticMethod(new Object[]{new int[][]{{1, 2, 3, 4}, {4, 5, 6, 45}, {7, 8, 9, 12}}});
         PRINT_WRAPPER.off();
         System.out.println(PRINT_WRAPPER.getOutString());
-        Assertions.assertEquals(PRINT_WRAPPER.getOutString(), "1 2 3 4\n4 5 6 45\n7 8 9 12");
+        Assertions.assertEquals("1 2 3 4\n4 5 6 45\n7 8 9 12", PRINT_WRAPPER.getOutString());
     }
 
     @DisplayName("1 2\n4 5\n7 8\n4 67\n33 111")
     @Test
-    void test3() {
+    void test3() throws Exception {
         printMatrix.invokeStaticMethod(new Object[]{new int[][]{{1, 2}, {4, 5}, {7, 8}, {4, 67}, {33, 111}}});
         PRINT_WRAPPER.off();
         System.out.println(PRINT_WRAPPER.getOutString());
-        Assertions.assertEquals(PRINT_WRAPPER.getOutString(), "1 2\n4 5\n7 8\n4 67\n33 111");
+        Assertions.assertEquals("1 2\n4 5\n7 8\n4 67\n33 111", PRINT_WRAPPER.getOutString());
     }
 }
