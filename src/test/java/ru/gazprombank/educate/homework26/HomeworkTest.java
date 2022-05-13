@@ -32,7 +32,7 @@ class HomeworkTest {
 
     @BeforeEach
     void setUp() {
-        catClass = ClassCash.getClass("ru.gazprombank.educate.homework26.Cat");
+        catClass = ClassCash.getClass("Cat");
     }
 
     @DisplayName("'name' field exist")
@@ -75,6 +75,7 @@ class HomeworkTest {
     @DisplayName("constructor(name, age, weight): name exception (null name)")
     @Test
     void argsConstructorNameException1Test() {
+        getArgsCatConstructor();
         assertThrowsExactly(IllegalArgumentException.class,
                 () -> getArgsCatConstructor().getInstance(constructorExceptionClasses(), null, 1, 1), "must be exception of creation");
     }
@@ -82,7 +83,7 @@ class HomeworkTest {
     @DisplayName("constructor(name, age, weight): name exception (empty name)")
     @Test
     void argsConstructorNameException2Test() {
-
+        getArgsCatConstructor();
         assertThrowsExactly(IllegalArgumentException.class,
                 () -> getArgsCatConstructor().getInstance(constructorExceptionClasses(), "", 1, 1), "must be exception of creation");
     }
@@ -90,6 +91,7 @@ class HomeworkTest {
     @DisplayName("constructor(name, age, weight): age exception (negative age)")
     @Test
     void argsConstructorAgeException1Test() {
+        getArgsCatConstructor();
         assertAll(
                 Stream.concat(
                                 Stream.of((Executable) () -> assertThrowsExactly(IllegalArgumentException.class,
@@ -106,6 +108,7 @@ class HomeworkTest {
     @DisplayName("constructor(name, age, weight): age exception (to old age)")
     @Test
     void argsConstructorAgeException2Test() {
+        getArgsCatConstructor();
         assertAll(
                 Stream.concat(
                                 Stream.of((Executable) () -> assertThrowsExactly(IllegalArgumentException.class,
@@ -122,6 +125,7 @@ class HomeworkTest {
     @DisplayName("constructor(name, age, weight): weight exception (negative age)")
     @Test
     void argsConstructorWeightException1Test() {
+        getArgsCatConstructor();
         assertAll(
                 Stream.concat(
                                 Stream.of((Executable) () -> assertThrowsExactly(IllegalArgumentException.class,
@@ -138,6 +142,7 @@ class HomeworkTest {
     @DisplayName("constructor(name, age, weight): weight exception (to old age)")
     @Test
     void argsConstructorWeightException2Test() {
+        getArgsCatConstructor();
         assertAll(
                 Stream.concat(
                                 Stream.of((Executable) () -> assertThrowsExactly(IllegalArgumentException.class,
@@ -154,13 +159,14 @@ class HomeworkTest {
     @DisplayName("constructor(name, age, weight): try to create Cat Shroedinger")
     @Test
     void tryToCreateCatShroedinger() {
-        assertThrowsExactly(CollapseOfUniverse.class,
+        assertThrowsExactly(ClassCash.getClass("ru.gazprombank.educate.homework26.CollapseOfUniverse").getGenericClazz(),
                 () -> getArgsCatConstructor().getInstance(constructorExceptionClasses(), "Кот Шрёдингера", 1, 1), "must be exception of creation");
     }
 
     @DisplayName("constructor(name, age, weight): success create")
     @Test
     void successCreateCatArgsConstructor() {
+        getArgsCatConstructor();
         assertAll(
                 IntStream.range(1, 19).boxed()
                         .flatMap(age -> IntStream.range(1, 11).boxed()
@@ -181,7 +187,8 @@ class HomeworkTest {
     @Test
     void stronger1() throws Exception {
         Object catVasya = getArgsCatConstructor().getInstance("Vasya", 1, 1);
-        assertThrowsExactly(CatFoundNoOne.class, () -> getStrongerCatMethod().invokeMethod(methodExceptionClasses(), catVasya, (Object) null), "exception expected");
+        assertThrowsExactly(ClassCash.getClass("ru.gazprombank.educate.homework26.CatFoundNoOne").getGenericClazz(),
+                () -> getStrongerCatMethod().invokeMethod(methodExceptionClasses(), catVasya, (Object) null), "exception expected");
     }
 
     @DisplayName("'stronger' method: cat with him self")
@@ -259,11 +266,17 @@ class HomeworkTest {
     }
 
     private List<Class<? extends Exception>> constructorExceptionClasses() {
-        return List.of(IllegalArgumentException.class, CollapseOfUniverse.class);
+        return List.of(
+                IllegalArgumentException.class,
+                ClassCash.getClass("ru.gazprombank.educate.homework26.CollapseOfUniverse").getGenericClazz()
+        );
     }
 
     private List<Class<? extends Exception>> methodExceptionClasses() {
-        return List.of(CollapseOfUniverse.class, CatFoundNoOne.class);
+        return List.of(
+                ClassCash.getClass("ru.gazprombank.educate.homework26.CollapseOfUniverse").getGenericClazz(),
+                ClassCash.getClass("ru.gazprombank.educate.homework26.CatFoundNoOne").getGenericClazz()
+        );
     }
 
     private String randomString() {

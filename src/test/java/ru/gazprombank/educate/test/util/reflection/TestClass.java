@@ -132,6 +132,11 @@ public class TestClass extends EqualsHashCodeClass<TestClass> {
         return clazz;
     }
 
+    @SuppressWarnings("unchecked")
+    public <T> Class<T> getGenericClazz() {
+        return (Class<T>) clazz;
+    }
+
     public List<Modifier> getModifiers() {
         return modifiers;
     }
