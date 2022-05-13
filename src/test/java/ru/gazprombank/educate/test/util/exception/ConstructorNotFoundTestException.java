@@ -26,7 +26,7 @@ public class ConstructorNotFoundTestException extends RuntimeException {
             builder.append(' ');
         }
         builder.append(ownerClass.getSimpleName()).append('(');
-        StringUtils.fillBuilderWithJoin(builder, parameterTypeClasses, " ");
+        StringUtils.fillBuilderWithJoin(builder, parameterTypeClasses, ", ");
         builder.append(")' not found");
         return builder.toString();
     }
