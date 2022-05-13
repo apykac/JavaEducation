@@ -3,8 +3,8 @@ package ru.gazprombank.educate.homework26;
 public class Cat {
 
     private final String name;
-    private final Integer age;
-    private final Double weight;
+    private final int age;
+    private final double weight;
 
     public Cat() {
         name = "Кот Шрёдингера";
@@ -12,42 +12,24 @@ public class Cat {
         weight = 5.5;
     }
 
-    public Cat(String name, Integer age, Double weight) {
-        if (name.equals("Кот Шрёдингера")) {
-            try {
-                throw new CollapseOfUniverse();
-            } catch (CollapseOfUniverse e) {
-                throw new RuntimeException(e);
-            }
-        }
-
-        if (null != name && !name.equals(""))
+    public Cat(String name, int age, double weight) throws IllegalArgumentException, CollapseOfUniverse {
+        if (name == null || name.equals(""))
+            throw new IllegalArgumentException();
+        else
             this.name = name;
-        else {
-            try {
-                throw new IllegalArgumentException();
-            } catch (IllegalArgumentException e) {
-                throw new RuntimeException(e);
-            }
-        }
 
-        if (age > 1 && age < 20)
+        if (name.equals("Кот Шрёдингера"))
+            throw new CollapseOfUniverse();
+
+        if (age >= 1 && age <= 18)
             this.age = age;
         else
-            try {
-                throw new IllegalArgumentException();
-            } catch (IllegalArgumentException e) {
-                throw new RuntimeException(e);
-            }
+            throw new IllegalArgumentException();
 
-        if (weight > 0.1 && weight < 10)
+        if (weight > 0.1 && weight < 15)
             this.weight = weight;
         else
-            try {
-                throw new IllegalArgumentException();
-            } catch (IllegalArgumentException e) {
-                throw new RuntimeException(e);
-            }
+            throw new IllegalArgumentException();
     }
 
     public Integer getAge() {
@@ -62,23 +44,15 @@ public class Cat {
         return name;
     }
 
-    public boolean stronger(Cat cat) {
-        if (null == cat) {
-            try {
-                throw new CatFoundNoOne();
-            } catch (CatFoundNoOne e) {
-                throw new RuntimeException(e);
-            }
-        }
+    public boolean stronger(Cat cat) throws CatFoundNoOne, CollapseOfUniverse {
+        if (null == cat)
+            throw new CatFoundNoOne();
+
 
         if (this.name.equals("Кот Шрёдингера")) {
-            if (cat.name.equals("Кот Шрёдингера")) {
-                try {
-                    throw new CollapseOfUniverse();
-                } catch (CollapseOfUniverse e) {
-                    throw new RuntimeException(e);
-                }
-            } else
+            if (cat.name.equals("Кот Шрёдингера"))
+                throw new CollapseOfUniverse();
+            else
                 return true;
         }
 

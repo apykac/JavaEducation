@@ -1,7 +1,7 @@
 package ru.gazprombank.educate.homework26;
 
 public class Homework {
-    public static void main(String[] args) throws CatFoundNoOne {
+    public static void main(String[] args) throws CatFoundNoOne, CollapseOfUniverse, IllegalArgumentException {
         Cat cat1 = new Cat();
         Cat cat3 = new Cat();
         Cat cat2 = new Cat("Kot", 4, 4.3);

@@ -77,7 +77,7 @@ class HomeworkTest {
     void argsConstructorNameException1Test() {
         getArgsCatConstructor();
         assertThrowsExactly(IllegalArgumentException.class,
-                () -> getArgsCatConstructor().getInstance(constructorExceptionClasses(), null, 1, 1), "must be exception of creation");
+                () -> getArgsCatConstructor().getInstance(constructorExceptionClasses(), null, 1, 1.0), "must be exception of creation");
     }
 
     @DisplayName("constructor(name, age, weight): name exception (empty name)")
