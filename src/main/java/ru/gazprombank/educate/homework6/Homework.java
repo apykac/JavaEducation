@@ -4,7 +4,7 @@ public class Homework {
 
     public static int speedingFine(int speed, boolean isHoliday) {
         int skm = 0;
-        if (isHoliday = true) {
+        if (isHoliday == true) {
              if (speed <= 65) {
                 return 0;
             } else if (speed <= 85 && speed > 66) {
