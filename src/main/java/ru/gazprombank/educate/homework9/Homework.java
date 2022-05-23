@@ -2,7 +2,6 @@ package ru.gazprombank.educate.homework9;
 
 public class Homework {
 
-    public class Homework {
         public static boolean isOrdered(int first, int second, int third, boolean itsOk) {
             if (itsOk == true) {
                 if ((second <= first || second > first) && (second < third)) {
