@@ -31,7 +31,7 @@ public class TestMethod extends EqualsHashCodeClass<TestMethod> {
     }
 
     public <T> T invokeStaticMethod(Object... args) throws Exception {
-        return invokeStaticMethod(null, null, args);
+        return invokeStaticMethod(null, args);
     }
 
     public void invokeVoidMethod(Object o, Object... args) throws Exception {
