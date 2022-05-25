@@ -7,10 +7,10 @@ public class Homework {
     }
 
     public static int wordsCount(String[] words, int len) {
-        int result = 0;
-        for (String word : words) {
-            if (word.length() == len) result++;
+        int i = 0;
+        for (String a : words) {
+            if (a.length() == len) i++;
         }
-        return result;
+        return i;
     }
 }
