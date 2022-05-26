@@ -11,7 +11,7 @@ public class Homework {
         if (second > first && third > second) {
             return true;
         }
-        if (!itsOk && second < third) {
+        if (itsOk && second < third) {
             return true;
         } else {
             return false;
