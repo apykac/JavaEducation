@@ -8,15 +8,12 @@ public class Homework {
     }
 
     public static double calculateTriangleArea(int a, int b, int c) throws TriangleExistException {
-        double s;
+        int p;
         if (a + b > c && a + c > b && b + c > a) {
-            double p;
             p = (a + b + c) / 2;
-            s = Math.sqrt(p * (p - a) * (p - b) * (p - c));
-            s = (double) Math.round(s * 1000) / 1000;
         } else {
             throw new TriangleExistException();
         }
-        return s;
+        return Math.sqrt(p * (p - a) * (p - b) * (p - c));
     }
     }
