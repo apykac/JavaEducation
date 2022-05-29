@@ -2,20 +2,16 @@ plugins {
     id 'java'
 }
 
-group = 'ru.gazprombank.educate'
-version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '11'
+group 'org.example'
+version '1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
 }
 
-def junitJupiterVersion = "5.8.2"
-
 dependencies {
-    testImplementation "org.junit.jupiter:junit-jupiter-api:$junitJupiterVersion"
-    testImplementation "org.junit.jupiter:junit-jupiter-engine:$junitJupiterVersion"
-    testImplementation "org.junit.jupiter:junit-jupiter-params:$junitJupiterVersion"
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
 }
 
 test {
