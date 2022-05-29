@@ -48,7 +48,7 @@ class HomeworkTest {
             ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "\\", "]", "^",
             "_", "`", "{", "|", "}", "~"
     })
-    void test(char c) {
+    void test(char c) throws Exception {
         Pair<String, Integer> testPair = getString(c);
         String testString = testPair.getFirst();
         Assertions.assertEquals(testPair.getSecond(), punctuationCountMethod.<Integer>invokeStaticMethod(testString), "Count of '" + c + "' must be " + testPair.getSecond() + " in: [" + testString + "] ");

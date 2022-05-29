@@ -8,7 +8,7 @@ public final class StringUtils {
     }
 
     public static <T> void fillBuilderWithJoin(StringBuilder builder, List<T> list, String splitter) {
-        if (builder != null && !list.isEmpty()) {
+        if (builder != null && list != null && !list.isEmpty()) {
             splitter = splitter == null ? "" : splitter;
             boolean begin = true;
             for (T element : list) {

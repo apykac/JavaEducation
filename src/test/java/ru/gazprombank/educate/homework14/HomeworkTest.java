@@ -18,7 +18,7 @@ public class HomeworkTest {
 
     @BeforeEach
     void setUp() {
-        TestClass testClass = AssertUtils.getClass("ru.gazprombank.educate.homework14.HomeWork");
+        TestClass testClass = AssertUtils.getClass("ru.gazprombank.educate.homework14.Homework");
         calculatePartialSumMethod = AssertUtils.getMethod(testClass,
                 "partialSum",
                 int.class.getName(),
@@ -28,84 +28,84 @@ public class HomeworkTest {
 
     @DisplayName("a: 1, b: 2, c: 3; answer = 6")
     @Test
-    void test1() {
+    void test1() throws Exception {
         int fine = calculatePartialSumMethod.invokeStaticMethod(1, 2, 3);
         assertEquals(6, fine, "Expected string: 6 actual " + fine);
     }
 
     @DisplayName("a: 1, b: 2, c: 13; answer = 3")
     @Test
-    void test2() {
+    void test2() throws Exception {
         int fine = calculatePartialSumMethod.invokeStaticMethod(1, 2, 13);
         assertEquals(3, fine, "Expected string: 3 actual " + fine);
     }
 
     @DisplayName("a: 1, b: 13, c: 3; answer = 1")
     @Test
-    void test3() {
+    void test3() throws Exception {
         int fine = calculatePartialSumMethod.invokeStaticMethod(1, 13, 3);
         assertEquals(1, fine, "Expected string: 1 actual " + fine);
     }
 
     @DisplayName("a: 1, b: 13, c: 13; answer = 1")
     @Test
-    void test4() {
+    void test4() throws Exception {
         int fine = calculatePartialSumMethod.invokeStaticMethod(1, 13, 13);
         assertEquals(1, fine, "Expected string: 1 actual " + fine);
     }
 
     @DisplayName("a: 6, b: 5, c: 2; answer = 13")
     @Test
-    void test5() {
+    void test5() throws Exception {
         int fine = calculatePartialSumMethod.invokeStaticMethod(6, 5, 2);
         assertEquals(13, fine, "Expected string: 13 actual " + fine);
     }
 
     @DisplayName("a: 13, b: 2, c: 3; answer = 0")
     @Test
-    void test6() {
+    void test6() throws Exception {
         int fine = calculatePartialSumMethod.invokeStaticMethod(13, 2, 3);
         assertEquals(0, fine, "Expected string: 0 actual " + fine);
     }
 
     @DisplayName("a: 13, b: 2, c: 13; answer = 0")
     @Test
-    void test7() {
+    void test7() throws Exception {
         int fine = calculatePartialSumMethod.invokeStaticMethod(13, 2, 13);
         assertEquals(0, fine, "Expected string: 0 actual " + fine);
     }
 
     @DisplayName("a: 13, b: 13, c: 2; answer = 0")
     @Test
-    void test8() {
+    void test8() throws Exception {
         int fine = calculatePartialSumMethod.invokeStaticMethod(13, 13, 2);
         assertEquals(0, fine, "Expected string: 0 actual " + fine);
     }
 
     @DisplayName("a: 9, b: 4, c: 13; answer = 13")
     @Test
-    void test9() {
+    void test9() throws Exception {
         int fine = calculatePartialSumMethod.invokeStaticMethod(9, 4, 13);
         assertEquals(13, fine, "Expected string: 13 actual " + fine);
     }
 
     @DisplayName("a: 8, b: 13, c: 2; answer = 8")
     @Test
-    void test10() {
+    void test10() throws Exception {
         int fine = calculatePartialSumMethod.invokeStaticMethod(8, 13, 2);
         assertEquals(8, fine, "Expected string: 8 actual " + fine);
     }
 
     @DisplayName("a: 7, b: 2, c: 1; answer = 10")
     @Test
-    void test11() {
+    void test11() throws Exception {
         int fine = calculatePartialSumMethod.invokeStaticMethod(7, 2, 1);
         assertEquals(10, fine, "Expected string: 10 actual " + fine);
     }
 
     @DisplayName("a: 3, b: 3, c: 13; answer = 6")
     @Test
-    void test12() {
+    void test12() throws Exception {
         int fine = calculatePartialSumMethod.invokeStaticMethod(3, 3, 13);
         assertEquals(6, fine, "Expected string: 6 actual " + fine);
     }
