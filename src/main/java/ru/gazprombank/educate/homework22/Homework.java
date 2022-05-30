@@ -4,7 +4,7 @@ public class Homework {
 
     public static void main(String[] args) {
         String str = "hello";
-        System.out.println(hyphenSplit(String str));
+        System.out.println(hyphenSplit(str));
     }
 
     public static String hyphenSplit(String str) {
