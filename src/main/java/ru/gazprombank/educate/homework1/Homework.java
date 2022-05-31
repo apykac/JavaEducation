@@ -1,6 +1,8 @@
 package ru.gazprombank.educate.homework1;
 
 import java.util.Arrays;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Homework {
     public static void main(String[] args) {
@@ -14,11 +16,11 @@ public class Homework {
     public static int punctuationCount(String text) {
 
         int counter = 0;
-
-        if (text.matches("\\p{Punct}")){
+        Pattern pattern = Pattern.compile("\\p{Punct}");
+        Matcher matcher = pattern.matcher(text);
+        while (matcher.find()){
             counter++;
         }
-
         return counter;
 
     }
