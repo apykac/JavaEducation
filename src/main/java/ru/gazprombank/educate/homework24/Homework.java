@@ -6,7 +6,7 @@ import java.util.Map;
 public class Homework {
 
     public static void main(String[] args) {
-
+        System.out.println(getMapFromString("123451222"));
     }
 
     public static Map <Integer, Integer> getMapFromString (String str) {

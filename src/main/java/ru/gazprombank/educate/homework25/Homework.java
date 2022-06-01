@@ -1,6 +1,7 @@
 package ru.gazprombank.educate.homework25;
 
-import java.util.Arrays
+import java.util.Arrays;
+
 public class Homework {
 
     public static void main(String[] args) {
