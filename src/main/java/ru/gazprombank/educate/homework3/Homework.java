@@ -9,10 +9,16 @@ public class Homework {
     public static void printMatrix(int[][] arr){
 
         for (int i = 0; i < arr.length; i++){
+            int e = arr.length-1;
+            int h = arr[i].length-1;
             for(int j = 0; j < arr[i].length;j++){
-                System.out.print(arr[i][j] + " ");
+                System.out.print(arr[i][j]);
+                if(h>j){
+                    System.out.print(" ");
+                }
             }
-            System.out.println();
+            if (e>i)
+            System.out.print("\n");
         }
     }
 }
