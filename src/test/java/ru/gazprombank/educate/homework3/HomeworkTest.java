@@ -60,6 +60,6 @@ class HomeworkTest {
         printMatrix.invokeStaticMethod(new Object[]{new int[][]{{1, 2}, {4, 5}, {7, 8}, {4, 67}, {33, 111}}});
         PRINT_WRAPPER.off();
         System.out.println(PRINT_WRAPPER.getOutString());
-        Assertions.assertEquals(PRINT_WRAPPER.getOutString(), "1 2\n4 5\n7 8\n4 67\n33 111");
+        Assertions.assertEquals("1 2\n4 5\n7 8\n4 67\n33 111", PRINT_WRAPPER.getOutString() );
     }
 }
