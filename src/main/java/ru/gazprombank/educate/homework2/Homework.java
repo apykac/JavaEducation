@@ -6,21 +6,21 @@ import java.math.RoundingMode;
 public class Homework {
     public static void main(String[] args) throws TriangleExistException {
 
-        System.out.println(calculateTriangleArea(5.7456,6,3.186));
+        System.out.println(calculateTriangleArea(2,3,40));
 
     }
 
-    public static double calculateTriangleArea(double a, double b, double c) throws TriangleExistException {
+    public static double calculateTriangleArea(int a, int b, int c) throws TriangleExistException {
 
         double square = 0;
+        double p = (a+b+c)/2.0;
 
-        try {
-            square = a*b*c;
-            if (square == 0) throw new TriangleExistException();
+
+        if (!((a+b>c)&(b+c>a)&(a+c>b))){
+            throw new TriangleExistException("triangle not exist");
         }
-        catch (TriangleExistException t) {
-            System.out.println("Not a Triangle");
-        }
+        square = Math.sqrt(p*(p-a)*(p-b)*(p-c));
+
 
         BigDecimal result = new BigDecimal(square);
         result = result.setScale(3, RoundingMode.HALF_UP);
