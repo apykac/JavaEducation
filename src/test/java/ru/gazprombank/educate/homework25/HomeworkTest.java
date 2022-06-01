@@ -28,35 +28,35 @@ public class HomeworkTest {
 
     @DisplayName("str: {\"test2\", \"test2\", \"test2Tr\", \"te\"}; answer = 'te'")
     @Test
-    void test1() {
+    void test1() throws Exception {
         String fine = calculateGetPrefixMethod.invokeStaticMethod((Object) new String[]{"test2", "test2", "test2Tr", "te"});
         assertEquals("te", fine, "Expected string: 'te' actual " + fine);
     }
 
     @DisplayName("str: {\"atest2\", \"btest2\", \"ctest2Tr\", \"te\"}; answer = ''")
     @Test
-    void test2() {
+    void test2() throws Exception {
         String fine = calculateGetPrefixMethod.invokeStaticMethod((Object) new String[]{"atest2", "btest2", "ctest2Tr", "te"});
         assertEquals("", fine, "Expected string: '' actual " + fine);
     }
 
     @DisplayName("str: {\"\", \"\", \"te\"}; answer = ''")
     @Test
-    void test3() {
+    void test3() throws Exception {
         String fine = calculateGetPrefixMethod.invokeStaticMethod((Object) new String[]{"", "", "te"});
         assertEquals("", fine, "Expected string: '' actual " + fine);
     }
 
     @DisplayName("str: {\"test1\", \"test12\", \"test123\", \"test1234\"}; answer = 'test1'")
     @Test
-    void test4() {
+    void test4() throws Exception {
         String fine = calculateGetPrefixMethod.invokeStaticMethod((Object) new String[]{"test1", "test12", "test123", "test1234"});
         assertEquals("test1", fine, "Expected string: 'test1' actual " + fine);
     }
 
     @DisplayName("str: {\"00000000\", \"000\", \"111111111111111\", \"11111111111111111111111122222222\"}; answer = '111111111111111'")
     @Test
-    void test5() {
+    void test5() throws Exception {
         String fine = calculateGetPrefixMethod.invokeStaticMethod((Object) new String[]{"00000000", "000", "111111111111111", "11111111111111111111111122222222"});
         assertEquals("111111111111111", fine, "Expected 111111111111111: 'test1' actual " + fine);
     }

@@ -2,6 +2,7 @@ package ru.gazprombank.educate.test.util.reflection;
 
 import ru.gazprombank.educate.test.util.Modifier;
 import ru.gazprombank.educate.test.util.StringUtils;
+import ru.gazprombank.educate.test.util.exception.FieldValueGetTestException;
 
 import java.lang.reflect.Field;
 import java.util.List;
@@ -32,6 +33,26 @@ public class TestField extends EqualsHashCodeClass<TestField> {
 
     public List<Modifier> getModifiers() {
         return modifiers;
+    }
+
+    public Object getValue(Object o) {
+        if (o == null) {
+            throw new FieldValueGetTestException(owner, name, modifiers, type, "object is null");
+        } else {
+            boolean isAccessible = field.canAccess(o);
+            try {
+                if (!isAccessible) {
+                    field.setAccessible(true);
+                }
+                return field.get(o);
+            } catch (Exception e) {
+                throw new FieldValueGetTestException(owner, name, modifiers, type, e.getMessage(), e);
+            } finally {
+                if (!isAccessible) {
+                    field.setAccessible(false);
+                }
+            }
+        }
     }
 
     @Override

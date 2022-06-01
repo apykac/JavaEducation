@@ -39,7 +39,7 @@ class HomeworkTest {
             "5 attempt",
             "6 attempt",
     })
-    void matrixTest(String s) {
+    void matrixTest(String s) throws Exception {
         Pair<int[][], int[][]> pairs = getArrays();
         int[][] array1 = pairs.getFirst();
         int[][] array2 = pairs.getSecond();
