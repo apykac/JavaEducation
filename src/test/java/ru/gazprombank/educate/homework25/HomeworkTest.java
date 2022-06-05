@@ -54,10 +54,10 @@ public class HomeworkTest {
         assertEquals("test1", fine, "Expected string: 'test1' actual " + fine);
     }
 
-    @DisplayName("str: {\"00000000\", \"000\", \"111111111111111\", \"11111111111111111111111122222222\"}; answer = '111111111111111'")
+    @DisplayName("str: {\"00000000\", \"000\", \"111111111111111\", \"11111111111111111111111122222222\"}; answer = ''")
     @Test
     void test5() throws Exception {
         String fine = calculateGetPrefixMethod.invokeStaticMethod((Object) new String[]{"00000000", "000", "111111111111111", "11111111111111111111111122222222"});
-        assertEquals("111111111111111", fine, "Expected 111111111111111: 'test1' actual " + fine);
+        assertEquals("", fine, "Expected : 'test1' actual " + fine);
     }
 }
