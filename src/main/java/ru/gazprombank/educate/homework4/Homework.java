@@ -13,8 +13,7 @@ public class Homework {
                 Random random = new Random();
                 do {
                     mass[i][j] = random.nextInt();
-                }
-                while (mass[i][j] == 0);
+                } while (mass[i][j] == 0);
             }
         }
         return mass;
