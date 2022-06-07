@@ -20,7 +20,6 @@ public class Homework {
 
         for (int i = 0; i < inner.length; i++){
                 if (inner[i] == 13) {
-                    sum += 0;
                     break;
             }
                 sum += inner[i];
