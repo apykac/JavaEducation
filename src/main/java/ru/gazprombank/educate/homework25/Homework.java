@@ -1,27 +1,32 @@
 package ru.gazprombank.educate.homework25;
 
-import java.util.Arrays;
-
 public class Homework {
-
     public static void main(String[] args) {
-        String[] str = {"hey, hey1, hey man, heyyaaa"};
-        System.out.println(getPrefix(str));
+        System.out.println(getPrefix(new String[]{"test2", "test2", "test2Tr", "te"}));
     }
 
-    public static String getPrefix(String[] strings) {
-       if (strings.length == 0)
-           return "";
-        if (strings.length == 1)
-            return strings[0];
+    public static String getPrefix(String[] array) {
 
-        Arrays.sort(strings);
-        int min = Math.min(strings[0].length(), strings[0].length());
-        int i = 0;
-        while (i < min && strings[0].charAt(i) == strings[1].charAt(i))
-            i++;
-        String prefix = strings[0].substring(0, i);
+        int prefixMaxLen = array[0].length();
+        for (int i = 1; i < array.length; i++) {
+            if (prefixMaxLen > array[i].length()) {
+                prefixMaxLen = array[i].length();
+            }
+        }
+
+        String prefix = "";
+        char temp;
+        for (int i = 0; i < prefixMaxLen; i++) {
+            temp = array[0].charAt(i);
+            for (int j = 0; j < array.length - 1; j++) {
+                if (array[j].charAt(i) == array[j+1].charAt(i)) {
+
+                } else {
+                    return prefix;
+                }
+            }
+            prefix = prefix + temp;
+        }
         return prefix;
-
     }
 }
