@@ -7,6 +7,6 @@ public class Homework {
     }
 
     public static String starKill(String str){
-        return str.replaceAll("(.{0,1}\\*+.{0,1})", "");
+        return str.replaceAll("(.?\\*+.?)", "");
     }
 }
