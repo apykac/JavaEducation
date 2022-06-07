@@ -1,4 +1,4 @@
-package ru.gazprombank.educate.homework23.homework24;
+package ru.gazprombank.educate.homework24;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
