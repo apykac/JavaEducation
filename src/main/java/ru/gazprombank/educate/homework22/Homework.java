@@ -9,7 +9,7 @@ public class Homework {
     }
 
     public static String hyphenSplit(String str) {
-        if (Objects.equals(str, ""))
+        if (Objects.equals (str, ""))
             return str;
         String newString = str.substring(1);
         if (newString.length() < 1)
