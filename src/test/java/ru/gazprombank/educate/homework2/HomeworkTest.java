@@ -3,6 +3,7 @@ package ru.gazprombank.educate.homework2;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import ru.gazprombank.educate.homework2.TriangleExistException;
 import ru.gazprombank.educate.test.util.AssertUtils;
 import ru.gazprombank.educate.test.util.Modifier;
 import ru.gazprombank.educate.test.util.exception.MethodInvokeTestException;
