@@ -4,10 +4,10 @@ import java.text.DecimalFormat;
 
 public class Homework {
     public static void main(String[] args) {
-    //int a = 8;
-   // int b = -1;
-    //int c = 7;
-   // calculateTriangleArea(a,b,c);
+/*    int a = 8;
+    int b = 4;
+    int c = 7;
+    calculateTriangleArea(a,b,c);*/
     }
 
     public static double calculateTriangleArea(int a, int b, int c) throws TriangleExistException {
@@ -16,10 +16,11 @@ public class Homework {
         }
         DecimalFormat decimalFormat = new DecimalFormat("#.###");
         double p = (double) (a + b + c) / 2;
-        double s = Double.parseDouble(decimalFormat.format(Math.sqrt(p * (p - a) * (p - b) * (p - c))));
+        double s = Math.sqrt(p * (p - a) * (p - b) * (p - c));
+        String triagleString = decimalFormat.format(s);
+        double result = Double.parseDouble(triagleString.replace(",", "."));
 
-        //String square = decimalFormat.format(s);
-        //System.out.println(square);
-        return s;
+
+        return result;
     }
 }
