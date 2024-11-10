@@ -18,9 +18,7 @@ public class Homework {
         double p = (double) (a + b + c) / 2;
         double s = Math.sqrt(p * (p - a) * (p - b) * (p - c));
         String triagleString = decimalFormat.format(s);
-        double result = Double.parseDouble(triagleString.replace(",", "."));
 
-
-        return result;
+        return Double.parseDouble(triagleString.replace(",", "."));
     }
 }

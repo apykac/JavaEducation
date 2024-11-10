@@ -45,9 +45,7 @@ public class Homework {
         StringBuilder stringBuilder = new StringBuilder();
         for (int i = 0; i < array.length; i++) {
             stringBuilder.append(Arrays.toString(array[i]));
-                if (i == array.length - 1) {
-                    break;
-                } else {
+                if (i != array.length - 1) {
                     stringBuilder.append("\n");
                 }
         }
