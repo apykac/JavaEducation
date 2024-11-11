@@ -4,7 +4,7 @@ public class Homework {
 
     public static void main(String[] args) {
 
-        repeatChar("The");
+       // repeatChar("The");
     }
     public static String repeatChar(String str){
 
@@ -13,8 +13,10 @@ public class Homework {
 
         for(int c = 0; c < str.length(); c++){
             char i = str.charAt(c);
-            buffer.append(i);
-            buffer.append(i);
+            for(int k = 0; k < 2; k++){
+                buffer.append(i);
+            }
+
         }
 
         return String.valueOf(buffer);
