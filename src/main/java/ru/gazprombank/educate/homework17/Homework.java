@@ -5,4 +5,15 @@ public class Homework {
     public static void main(String[] args) {
 
     }
+    public static int wordsCount(String[] words, int len){
+       int count = 0;
+
+        for (String c : words){
+            if(c.length() == len){
+                count ++;
+
+            }
+        }
+        return count;
+    }
 }
