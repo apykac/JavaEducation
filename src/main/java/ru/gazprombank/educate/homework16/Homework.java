@@ -26,6 +26,15 @@ public class Homework {
                 countIndex = 1;
             }
 
+
+        }
+
+        for (int i = 0; i < result.length(); i++){
+            if( (i + 1) == '*'){
+
+            }else{
+
+            }
         }
         System.out.println(result);
         return result.toString();

@@ -7,20 +7,20 @@ public class Homework {
 
     public static void main(String[] args) {
 
-        //yoYo("xyoxhxiyohhyoh");
+        yoYo("xyoxhxiyohhyoh");
     }
 
 
     public static int yoYo(String str){
-
+        System.out.println("Base str - " + str + ";     Current count - " + count);
 
         if(!str.contains("yo")) {
             return count;
         }
-            index = str.lastIndexOf("yo");
-            yoYo(str.substring(0, index));
-
+        index = str.lastIndexOf("yo");
         count++;
+        yoYo(str.substring(0, index));
+
 
         //System.out.println(count);
 
