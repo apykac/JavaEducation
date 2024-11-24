@@ -1,54 +1,74 @@
 package ru.gazprombank.educate.homework_vtb_1;
 
+import java.util.*;
+
 public class Homework {
-    static int maxSumm = 0;
+
+    private static final Map<Character, Integer> costOfCharacters = new LinkedHashMap<>();
+    private static void listOfCharacters(){
+        int count = 0;
+        for (char i = 'a'; i <= 'z'; i++) {
+            costOfCharacters.put(i, ++count);
+        }
+    }
+
+    private static int maxSum = 0;
+    private static Map<Integer, List<String>> listStringOfCost = new LinkedHashMap<>();
+
 
 
     public static void main(String[] args) {
-        String[] strings = {"aaaaaaa", "bbbb", "cccc", "abab", "abcabc", "aaccaab", "aabaab"};
-        maxSummCharInString(strings);
+        String[] strings = {"aaaa", "bbbb", "aaccaab", "abab", "z", "z" , "aabaab"};
+
+        listOfCharacters();
+        maxSumCharInString(strings);
+
+
     }
 
-    public static void maxSummCharInString(String[] strings){
-        int summInCycle = 0;
-        String maxString1 = "";
-        String maxString2 = "";
+
+
+    public static void maxSumCharInString(String[] strings){
+
+        List<String> list = new ArrayList<>();
+        int tempValue = 0;
         for(String c : strings){
-            summInCycle = costString(c);
-
-            if(summInCycle > maxSumm){
-                maxSumm = summInCycle;
-                maxString1 = c;
-            }
-            if(summInCycle == maxSumm){
-                maxString2 = c;
-            }
-
-
+            tempValue = costString(c);
+            list = listStringOfCost.getOrDefault(tempValue, new ArrayList<>());
+            list.add(c);
+            listStringOfCost.put(tempValue, list);
+            if(tempValue > maxSum) {
+                    maxSum = tempValue;
+                }
         }
-        if(maxString1.length() > maxString2.length()){
-            System.out.println(maxString2);
-        } else if (maxString1.length() < maxString2.length()) {
-            System.out.println(maxString1);
-        }else{
-            System.out.println(maxString1);
-            System.out.println(maxString2);
-        }
-
+        result();
     }
+
 
     public static int costString(String str){
-       //char[] strArray = str.toCharArray();
         int count = 0;
+
         for(int i = 0; i < str.length(); i++){
-            if(str.charAt(i) == 'a'){
-                count += 3;
-            }else if (str.charAt(i) == 'b') {
-                count += 2;
-            }else {
-                count++;
-            }
+            count += costOfCharacters.get(str.charAt(i));
+
         }
         return count;
+    }
+
+    public static void result() {
+        List <String> resultList = listStringOfCost.get(maxSum);
+        int shortStringOfList = resultList.get(0).length();
+
+        for(String c : resultList){
+            if(c.length() < shortStringOfList){
+                shortStringOfList = c.length();
+            }
+        }
+        for(String s : resultList){
+            if(s.length() == shortStringOfList){
+                System.out.println(s);
+            }
+        }
+
     }
 }
